@@ -32,18 +32,18 @@ plan their weekly meals and seamlessly generate an organized shopping list with 
 
 ### STAKEHOLDER ANALYSIS:
 **User Persona:**
-    Name: Vani
-    Role: Working professional
-    Age: 35
-    Gender: Female
-    Skill level 1: Knowledgeable about nutrition and diet
-    Skill level 2: Avid home cook
-    Skill level 3: Frugal shopper
-    Motivation: Make meal planning and grocery shopping fun and efficient.
-    Desires/ wants/ needs: Wants to be able to meal plan using the recipes in a calendar based format. Also wants
-    to create a shopping list quickly and accurately. Potentially outsource shopping to someone else during busy
-    weeks. Wants herself and her family to be healthy by avoiding processed foods and take out. Wants to save money
-    by eating at home and shopping for groceries on sale.
+- Name: Vani
+- Role: Working professional
+- Age: 35
+- Gender: Female
+- Skill level 1: Knowledgeable about nutrition and diet
+- Skill level 2: Avid home cook
+- Skill level 3: Frugal shopper
+- Motivation: Make meal planning and grocery shopping fun and efficient.
+- Desires/ wants/ needs: Wants to be able to meal plan using the recipes in a calendar based format. Also wants
+to create a shopping list quickly and accurately. Potentially outsource shopping to someone else during busy
+weeks. Wants herself and her family to be healthy by avoiding processed foods and take out. Wants to save money
+by eating at home and shopping for groceries on sale.
 
 
 ### BACKLOG:
