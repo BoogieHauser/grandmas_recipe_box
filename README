@@ -10,6 +10,9 @@ MEMBERS / ROLES:
 PRODUCT VISION:
     Project Name: Grandma's Recipe Box (GRB)
 
+    Project Description: Grandma’s Recipe Box is a comprehensive meal planning tool that allows users to create recipes,
+    plan their weekly meals and seamlessly generate an organized shopping list with all necessary ingredients.
+
     Far Vision: Organize the world's recipes - and your kitchen.
 
     Near Vision: A place to digitally store all of your family's "secret" recipes alongside a set of popular dishes.
@@ -40,8 +43,17 @@ STAKEHOLDER ANALYSIS:
         by eating at home and shopping for groceries on sale.
 
 BACKLOG:
-    [Insert Link Here]
-    [Order Rationale]
+    https://doylead.atlassian.net/jira/software/projects/E71/boards/2/backlog?atlOrigin=eyJpIjoiZjliZTg5YmI3ZGY2NDljOWJjMmM3OTM2ZjNhNzVlNGMiLCJwIjoiaiJ9&cloudId=56827f1d-9c14-485c-8ee9-3e41b8b2df97&selectedIssue=E71-16
+
+    Order Rationale: We started with add recipe first in order to ensure that we have recipes in the database to work
+    with on future PBIs. We also added save recipes second in order to have a persistent database to work with on future
+    PBIs. Next we covered viewing the recipes so that we could work on UI and ensure that formatting is legible and
+    accessible. We need to be able to browse recipes in the user database as the next step. We know that the user should
+    be able to delete recipes and edit recipes so these are next. The stakeholder wanted to be able to tag the recipes
+    in order to accommodate a future filter so we thought this could go along with editing and annotating the recipes.
+    The users want to share recipes with their loved ones so we want to implement that next. Lastly we wanted to begin
+    on filtering and searching functionality. We picked these for the first sprint so that we would have a solid
+    foundation for implementation of future features that the stakeholders requested.
 
 SPRINT PLANNING:
     Definition of Ready:
