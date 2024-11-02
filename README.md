@@ -84,10 +84,10 @@ that they may be cooking for.
 
 ### SPRINT PLANNING:
 **Definition of Ready:**
-    - PBI has an estimated size (and it should be small)
-    - PBI is clearly articulated and not ambiguous
-    - PBI is expressed as a user story (“As a ______, I want ______ so that I can ______”)
-    - PBI has acceptance criteria
-    - All dependencies for PBI are known
-    - Developers have had the opportunity to ask questions
+- PBI has an estimated size (and it should be small)
+- PBI is clearly articulated and not ambiguous
+- PBI is expressed as a user story (“As a ______, I want ______ so that I can ______”)
+- PBI has acceptance criteria
+- All dependencies for PBI are known
+- Developers have had the opportunity to ask questions
 
