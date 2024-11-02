@@ -51,20 +51,35 @@ by eating at home and shopping for groceries on sale.
 **Backlog Link**
 [Jira Backlog](https://doylead.atlassian.net/jira/software/projects/E71/boards/2/backlog?atlOrigin=eyJpIjoiZjliZTg5YmI3ZGY2NDljOWJjMmM3OTM2ZjNhNzVlNGMiLCJwIjoiaiJ9&cloudId=56827f1d-9c14-485c-8ee9-3e41b8b2df97&selectedIssue=E71-16)
 
-**Order Rationale:** We picked these for the first sprint so that we would have a solid foundation for implementation 
-of future features that the stakeholders required.
+**Order Rationale:** We picked these backlog items for the first sprint so that we would have a solid foundation for 
+implementation of future features that the stakeholders required.
 
-The first thing the user needs to be able to do is add an account so that they can begin storing 
-their recipes. Once the user has an account they need to be able to add their recipes. The user also needs to be
-to save their newly created recipe. After the user has created and saved their recipes, they need to be able to
-view them in a format that is legible and accessible. The user also needs to be able to browse all of their stored 
-recipes. The user may encounter a recipe that they did not like so the user needs to be able to delete or edit this 
-recipe. The user would also like a more efficient way to search through their recipes so the user wants to introduce
-tagging and filtering by tag. The user must be able to create a tag and then filter their own recipes by that tag.
-The user also needs to be able to view their recipes remotely in case they want to add something to their cart at
-the grocery store. Next, the user wants to take notes on their recipe in order to accommodate preferences of people
-that they may be cooking for. The user next wants to share their recipes with their loved ones. Lastly, the user
-wants to filter the recipe by cook time so that they do not pick complicated recipes to make on a busy week night.
+1. **Create user account:** This is essential for users to register their account and begin storing their 
+recipes securely. This also facilitates future feature development by establishing account and recipe databases.
+2. **Delete user account:** The user would like to be able to delete their account in an easily accessible way. This
+promotes positive business practices and user autonomy.
+3. **Add recipes:** After the user creates an account, the user needs to be able to add recipes to their recipe box.
+This is a necessary function of the app.
+4. **Secure recipes:** Ensures that users' recipes protected and accessible to their account. This maintains privacy
+and security.
+5. **Save recipes between sessions:** The user needs to be able to save their recipes and reliably access them every 
+time they use the app.
+6. **View recipe:** The user needs to be able to view their recipe in a format that is legible and accessible. This
+allows the user to have a better cooking experience.
+7. **Browse recipes:** The user also needs to be able to browse all of their stored recipes to improve usability.
+8. **Delete a recipe:** The user may encounter a recipe that they did not like so the user needs to be able to delete
+this recipe. The user should have control over their content.
+9. **Edit a recipe:** The user needs to be able to modify the recipe in case of mistakes or updates. The helps with
+flexibility and recipe accuracy.
+10. **Tag recipe:** The user needs to be able to add tags to a recipe. This will make a future filter implementation
+possible.
+11. **Filter by recipe tags:** The user would like to filter their recipes by specific tags. This will make recipe 
+organization and visibility a lot better.
+12. **Filter by cook time:** The user wants to filter the recipe by cook time so that they do not pick complicated 
+recipes to make on a busy week night.
+13. **Annotate recipes:** The user wants to take notes on their recipe in order to accommodate preferences of people
+that they may be cooking for.
+14. **Share recipes:** The user next wants to share their recipes with their loved ones either by printing or email. 
     
 
 ### SPRINT PLANNING:
