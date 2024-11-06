@@ -91,3 +91,15 @@ that they may be cooking for.
 - All dependencies for PBI are known
 - Developers have had the opportunity to ask questions
 
+
+
+
+# SPRINT 1
+
+[Kanban Board](https://doylead.atlassian.net/jira/software/projects/E71/boards/2?atlOrigin=eyJpIjoiMzNiODIxZTdmNDEyNDUwMjhkMzVkY2Q3OTFlM2VhNzMiLCJwIjoiaiJ9)
+
+[Burndown Chart](https://doylead.atlassian.net/jira/software/projects/E71/boards/2/reports/burndown?source=sidebar&atlOrigin=eyJpIjoiMGZhNTc1MDY4NzI4NGM1NmI2NGU2YjUyN2ZiNDMzNGYiLCJwIjoiaiJ9)
+
+
+
+
