@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>View recipes!</title>
+{% endblock %}
+
+{% block body %}
+    <h1> {{ recipe.title }} </h1>
+    <div>
+        Ingredients: {{ recipe.ingredients }}
+        Instructions: {{ recipe.instructions }}
+        Prep time: {{ recipe.prepMinutes }}
+        Cook time: {{ recipe.cookMinutes }}
+        Servings: {{ recipe.servings }}
+    </div>
+
+
+{% endblock %}
