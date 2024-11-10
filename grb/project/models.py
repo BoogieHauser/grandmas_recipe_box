@@ -8,4 +8,13 @@ class Recipe(models.Model):
     cookMinutes = models.IntegerField()
     servings = models.IntegerField()
 
+    def getIngredients(self):
+        html = []
+        html.append("<ul>")
+        lines = self.ingredients.split("\n")
+        for line in lines:
+            html.append("<li>" + line + "</li>")
+        html.append("</ul>")
+        return "".join(html)
+
 

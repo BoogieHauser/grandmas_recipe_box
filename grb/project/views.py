@@ -13,12 +13,6 @@ def addRecipe(request):
         form = AddRecipe(request.POST)
 
         if form.is_valid():
-            # DO STUFF (Save to DB?)
-            print(form.cleaned_data)
-
-            #p = Person(first_name="Bruce", last_name="Springsteen")
-            #p.save(force_insert=True)
-
             newRecipe = Recipe(title = form.cleaned_data['title'],
                                ingredients = form.cleaned_data['ingredients'],
                                instructions = form.cleaned_data['instructions'],
@@ -28,7 +22,7 @@ def addRecipe(request):
                                )
             newRecipe.save()
 
-
+            # format = getIngredients(newRecipe)
             return HttpResponseRedirect("/viewRecipe/1")
         else:
             pass # TODO - Show error
@@ -44,7 +38,11 @@ def addRecipe(request):
 
 def viewRecipe(request, id):
     recipe = Recipe.objects.get(pk=id)
+    formattedIngredients = recipe.getIngredients()
 
     return render(request, "viewRecipe.html", {
-        "recipe": recipe
+        "recipe": recipe,
+        "formattedIngredients": formattedIngredients
     })
+
+

@@ -7,11 +7,13 @@
 {% block body %}
     <h1> {{ recipe.title }} </h1>
     <div>
-        Ingredients: {{ recipe.ingredients }}
+        {% autoescape off %}
+        Ingredients: {{ formattedIngredients }}
         Instructions: {{ recipe.instructions }}
         Prep time: {{ recipe.prepMinutes }}
         Cook time: {{ recipe.cookMinutes }}
         Servings: {{ recipe.servings }}
+        {% endautoescape %}
     </div>
 
 
