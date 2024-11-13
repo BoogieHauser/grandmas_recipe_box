@@ -96,10 +96,87 @@ that they may be cooking for.
 
 # SPRINT 1
 
-[Kanban Board](https://doylead.atlassian.net/jira/software/projects/E71/boards/2?atlOrigin=eyJpIjoiMzNiODIxZTdmNDEyNDUwMjhkMzVkY2Q3OTFlM2VhNzMiLCJwIjoiaiJ9)
+### FORECAST
 
-[Burndown Chart](https://doylead.atlassian.net/jira/software/projects/E71/boards/2/reports/burndown?source=sidebar&atlOrigin=eyJpIjoiMGZhNTc1MDY4NzI4NGM1NmI2NGU2YjUyN2ZiNDMzNGYiLCJwIjoiaiJ9)
+**Forecasted Number of Story Points:** 25
 
+**Forecast Rationale:** We chose this number of story points based on skill levels, number of team members, and
+scheduling impediments. Our stories are all very small so, as a team, we decided to try and tackle 25.5 points for our
+first sprint. The primary impediment for our team is scheduling for mod programming sessions. We have 5 team members in
+three separate time zones. We have currently committed meeting twice weekly for two hours with the caveat of augmenting 
+as necessary to ensure minimum viable product by the end of the sprint.
+
+**[Backlog Planning Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1730938293987819?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+This is evidence that only developers participated in the sprint planning and move of PBIs into sprint.
+
+### KANBAN AND BURNDOWN
+**[Kanban Board:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2?atlOrigin=eyJpIjoiMzNiODIxZTdmNDEyNDUwMjhkMzVkY2Q3OTFlM2VhNzMiLCJwIjoiaiJ9)**
+Kanban board for Sprint 1.
+
+**[Burndown Chart:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2/reports/burndown?source=sidebar&atlOrigin=eyJpIjoiMGZhNTc1MDY4NzI4NGM1NmI2NGU2YjUyN2ZiNDMzNGYiLCJwIjoiaiJ9)**
+Burndown chart for sprint 1
+
+
+### SCRUM AND MOB PROGRAMMING EVIDENCE
+**[Daily Scrum/Mob Programming 1:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1730944745702459?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+First daily scrum and first mob programming session.
+
+**[Daily Scrum/ Mob Programming 2:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731269669117479?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Second daily scrum and mob programming session.
+
+### SPRINT GOAL QUESTIONS
+
+**What did we do to help meet sprint goal?**
+- Andrew Doyle - 
+- Mark Aylward - 
+- Daniel Bodner - 
+- Karun Subramanian - 
+- Veronika Post - 
+
+**What do we plan to do to meet the sprint goal?**
+- Andrew Doyle - 
+- Mark Aylward - 
+- Daniel Bodner - 
+- Karun Subramanian - 
+- Veronika Post - 
+
+**Do we have any impediments?** 
+- Andrew Doyle - 
+- Mark Aylward - 
+- Daniel Bodner - 
+- Karun Subramanian - 
+- Veronika Post - 
+
+**What are our impediments?** 
+- Andrew Doyle - 
+- Mark Aylward - 
+- Daniel Bodner - 
+- Karun Subramanian - 
+- Veronika Post - 
+
+**What do we plan to do to remove them?**
+- Andrew Doyle - 
+- Mark Aylward - 
+- Daniel Bodner - 
+- Karun Subramanian - 
+- Veronika Post - 
+
+### SPRINT TASK BOARD AND BURNDOWN UPDATES
+
+**[Sprint Task Board and Burndown Update 1]()**
+
+**[Sprint Task Board and Burndown Update 2]()**
+
+### UNIT TEST EVIDENCE
+**[Unit Test Pass Screenshot]()**
+
+### WORKING SOFTWARE 
+**[GRB:]()**
+Link to functional Grandma's Recipe Box.
+
+### STAKEHOLDER
+**[Stakeholder Evidence:]()**
+Screen capture of stakeholder in sprint review.
 
 
 
