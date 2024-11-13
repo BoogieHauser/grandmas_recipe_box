@@ -125,13 +125,39 @@ First daily scrum and first mob programming session.
 Second daily scrum and mob programming session.
 
 **What did we do to help meet sprint goal?**
+- Andrew Doyle - 
+- Mark Aylward - 
+- Daniel Bodner - 
+- Karun Subramanian - 
+- Veronika Post - 
 
 **What do we plan to do to meet the sprint goal?**
+- Andrew Doyle - 
+- Mark Aylward - 
+- Daniel Bodner - 
+- Karun Subramanian - 
+- Veronika Post - 
 
 **Do we have any impediments?** 
-**What are our impediments?** 
-**What do we plan to do to remove them?**
+- Andrew Doyle - 
+- Mark Aylward - 
+- Daniel Bodner - 
+- Karun Subramanian - 
+- Veronika Post - 
 
+**What are our impediments?** 
+- Andrew Doyle - 
+- Mark Aylward - 
+- Daniel Bodner - 
+- Karun Subramanian - 
+- Veronika Post - 
+
+**What do we plan to do to remove them?**
+- Andrew Doyle - 
+- Mark Aylward - 
+- Daniel Bodner - 
+- Karun Subramanian - 
+- Veronika Post - 
 
 ### SPRINT TASK BOARD AND BURNDOWN UPDATES
 
