@@ -23,3 +23,6 @@ TODO:
 * Format recipe process steps as ordered list
 * Develop a basic browse recipe page
 * Prepare for stakeholder meeting
+* Change redirect after adding a recipe to point to a the recipe just added (currently it cheats and always points to the same recipe)
+* Add minimal formatting to recipe view page, including unit tests (e.g. ingredients as unordered list, steps as ordered lists)
+* Add syntax hinting to add recipe form
