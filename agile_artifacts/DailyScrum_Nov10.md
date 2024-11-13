@@ -13,3 +13,13 @@ Impediments:
 * Is having the ability to do smaller meetings helpful?  E.g. having pairs working outside the Wednesday/Sunday
   * We'll continue as-is for today and the following Wednesday, but may meet again between Wednesday and next Sunday to meet assignment requirements (not add features)
 * Review of rubric
+
+Done:
+* Added unit testing framework (using Django tools).  Notably this allows us to unit test database operations *without an external database*
+* Added HTML formatting for ingredients (as an unordered list) as part of the Recipe model
+
+TODO:
+* Build additional tests
+* Format recipe process steps as ordered list
+* Develop a basic browse recipe page
+* Prepare for stakeholder meeting
