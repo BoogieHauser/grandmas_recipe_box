@@ -8,13 +8,17 @@
     <h1> {{ recipe.title }} </h1>
     <div>
         {% autoescape off %}
+        Prep time: {{ prepTime }}<br>
+        Cook time: {{ cookTime }}<br>
+        Combined time: {{ combinedTime }}<br>
+        Servings: {{ recipe.servings }}<br>
         Ingredients: {{ formattedIngredients }}
-        Instructions: {{ recipe.instructions }}
-        Prep time: {{ recipe.prepMinutes }}
-        Cook time: {{ recipe.cookMinutes }}
-        Servings: {{ recipe.servings }}
+        Instructions: {{ formattedInstructions }}
         {% endautoescape %}
     </div>
 
+    <div>
+        <a href="/deleteRecipe/{{ recipe.id }}">Delete this recipe</a>
+    </div>
 
 {% endblock %}

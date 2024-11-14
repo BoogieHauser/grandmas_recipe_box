@@ -22,15 +22,15 @@ def addRecipe(request):
                                )
             newRecipe.save()
 
-            # format = getIngredients(newRecipe)
-            return HttpResponseRedirect("/viewRecipe/1")
+            return HttpResponseRedirect(f"/viewRecipe/{newRecipe.id}")
         else:
             pass # TODO - Show error
 
     else:
         form = AddRecipe()
 
-        form.fields['ingredients'].initial = "Separate by line breaks.  On each line:\nQuantity, Unit, Ingredient"
+        form.fields['ingredients'].initial = "Separate by line breaks.\nOn each line: Quantity, Unit, Ingredient"
+        form.fields['instructions'].initial = "Separate by line breaks."
 
         return render(request, "addRecipe.html", {
             "form": form
@@ -39,10 +39,31 @@ def addRecipe(request):
 def viewRecipe(request, id):
     recipe = Recipe.objects.get(pk=id)
     formattedIngredients = recipe.getIngredients()
+    formattedInstructions = recipe.getInstructions()
+    prepTime = recipe.convert_mins_to_hhmm(recipe.prepMinutes)
+    cookTime = recipe.convert_mins_to_hhmm(recipe.cookMinutes)
+    combinedTime = recipe.combine_times()
 
     return render(request, "viewRecipe.html", {
         "recipe": recipe,
-        "formattedIngredients": formattedIngredients
+        "formattedIngredients": formattedIngredients,
+        "formattedInstructions": formattedInstructions,
+        "prepTime": prepTime,
+        "cookTime" : cookTime,
+        "combinedTime" : combinedTime
     })
 
+def browseRecipe(request, tags=None):
+    recipes = Recipe.objects.all() # TODO add filtering
 
+    return render(request, "browseRecipes.html", {
+        "recipes": recipes
+    })
+
+def deleteRecipe(request, id):
+    Recipe.objects.filter(pk=id).delete()
+    # SomeModel.objects.filter(id=id).delete()
+    recipes = Recipe.objects.all()
+    return render(request, "browseRecipes.html", {
+        "recipes": recipes
+    })

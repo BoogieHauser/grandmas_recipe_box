@@ -1,3 +1,6 @@
+from xml.dom import VALIDATION_ERR
+from django.core.exceptions import ValidationError
+
 from django.test import TestCase
 from .models import Recipe
 
@@ -28,28 +31,88 @@ pour cereal in""")
         self.assertEqual(self.recipe.servings, 1)
 
 
-    def test_view_recipe(self):
+    def test_clean_line(self):
+        self.assertEqual(self.recipe.clean_line("a,b,c"), "a b c")
+
+    def test_formattedIngredients(self):
         self.assertEqual(self.recipe.getIngredients(),
-                         "<ul><li>8,oz,milk</li><li>1,cup,Lucky Charms</li></ul>")
+                         "<ul><li>8 oz milk</li><li>1 cup Lucky Charms</li></ul>")
 
-# class RecipeModelTest(TestCase):
-#     def setUp(self):
-#
-#
+    def test_formattedInstructions(self):
+        self.assertEqual(self.recipe.getInstructions(),
+                         "<ol><li>pour milk</li><li>warm it up if needed</li><li>pour cereal in</li></ol>")
 
-        # class RecipeModelTest(TestCase):
-        #
-        #     def setUp(self):
-        #         # This method runs before each test
-        #         self.recipe = Recipe.objects.create(
-        #             title="Simple Pancakes",
-        #             ingredients="Flour, Eggs, Milk, Sugar, Butter",
-        #             instructions="Mix all ingredients. Cook on a hot pan.",
-        #             cooking_time=10
-        #         )
-        #
-        #     def test_recipe_creation(self):
-        #         """Test that a Recipe instance is created correctly"""
-        #         self.assertEqual(self.recipe.title, "Simple Pancakes")
-        #         self.assertEqual(self.recipe.ingredients, "Flour, Eggs, Milk, Sugar, Butter")
-        #         self.assertEqual(self.recipe.cooking_time, 10)
+    def test_convert_mins_to_hhmm(self):
+        self.assertEqual(self.recipe.convert_mins_to_hhmm(90), "1:30")
+        self.assertNotEquals(self.recipe.convert_mins_to_hhmm(65), "1:5")
+
+    def test_combine_times(self):
+        self.assertEqual(self.recipe.combine_times(), "0:06")
+        self.assertNotEquals(self.recipe.combine_times(), "0:6")
+
+    def test_no_title(self):
+        with self.assertRaises(ValidationError):
+            recipe = Recipe(
+                ingredients = "1,,food",
+                instructions = "cook",
+                prepMinutes = 60,
+                cookMinutes = 30,
+                servings = 2
+            )
+            recipe.full_clean()
+
+    def test_no_ingredients(self):
+        with self.assertRaises(ValidationError):
+            recipe = Recipe(
+                title = "my recipe",
+                instructions = "cook",
+                prepMinutes = 60,
+                cookMinutes = 30,
+                servings = 2
+            )
+            recipe.full_clean()
+
+    def test_no_instructions(self):
+        with self.assertRaises(ValidationError):
+            recipe = Recipe(
+                title = "my recipe",
+                ingredients = "1,,food",
+                prepMinutes = 60,
+                cookMinutes = 30,
+                servings = 2
+            )
+            recipe.full_clean()
+
+    def test_no_prepMinutes(self):
+        with self.assertRaises(ValidationError):
+            recipe = Recipe(
+                title = "my recipe",
+                ingredients = "1,,food",
+                instructions = "cook",
+                cookMinutes = 30,
+                servings = 2
+            )
+            recipe.full_clean()
+
+    def test_no_cookMinutes(self):
+        with self.assertRaises(ValidationError):
+            recipe = Recipe(
+                title = "my recipe",
+                ingredients = "1,,food",
+                instructions = "cook",
+                prepMinutes = 60,
+                servings = 2
+            )
+            recipe.full_clean()
+
+    def test_no_servings(self):
+        with self.assertRaises(ValidationError):
+            recipe = Recipe(
+                title = "my recipe",
+                ingredients = "1,,food",
+                instructions = "cook",
+                prepMinutes = 60,
+                cookMinutes = 30
+            )
+            recipe.full_clean()
+

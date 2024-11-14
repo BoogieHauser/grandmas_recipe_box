@@ -22,4 +22,6 @@ urlpatterns = [
     #path("admin/", admin.site.urls),
     path("addRecipe", views.addRecipe, name="addRecipe"),
     path("viewRecipe/<int:id>", views.viewRecipe, name="viewRecipe"),
+    path("deleteRecipe/<int:id>", views.deleteRecipe, name="deleteRecipe"),
+    path("", views.browseRecipe, name="browseRecipe")
 ]

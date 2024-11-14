@@ -124,6 +124,10 @@ First daily scrum and first mob programming session.
 **[Daily Scrum/ Mob Programming 2:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731269669117479?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Second daily scrum and mob programming session.
 
+**[Daily Scrum/ Mob Programming 3:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731545160518449?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Third daily scrum and mob programming session.
+
+
 ### SPRINT GOAL QUESTIONS
 
 **What did we do to help meet sprint goal?**
