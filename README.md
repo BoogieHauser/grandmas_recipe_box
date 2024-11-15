@@ -128,51 +128,30 @@ Second daily scrum and mob programming session.
 Third daily scrum and mob programming session.
 
 
-### SPRINT GOAL QUESTIONS
+### SPRINT GOAL QUESTIONS, SPRINT TASK BOARD, AND BURNDOWN UPDATES
 
 **What did we do to help meet sprint goal?**
-- Andrew Doyle - 
-- Mark Aylward - 
-- Daniel Bodner - 
-- Karun Subramanian - 
-- Veronika Post - 
-
 **What do we plan to do to meet the sprint goal?**
-- Andrew Doyle - 
-- Mark Aylward - 
-- Daniel Bodner - 
-- Karun Subramanian - 
-- Veronika Post - 
-
 **Do we have any impediments?** 
-- Andrew Doyle - 
-- Mark Aylward - 
-- Daniel Bodner - 
-- Karun Subramanian - 
-- Veronika Post - 
-
 **What are our impediments?** 
-- Andrew Doyle - 
-- Mark Aylward - 
-- Daniel Bodner - 
-- Karun Subramanian - 
-- Veronika Post - 
-
 **What do we plan to do to remove them?**
-- Andrew Doyle - 
-- Mark Aylward - 
-- Daniel Bodner - 
-- Karun Subramanian - 
-- Veronika Post - 
 
-### SPRINT TASK BOARD AND BURNDOWN UPDATES
+Answers to all of these questions along with task board/ burndown updates can be found in the following links:
 
-**[Sprint Task Board and Burndown Update 1]()**
+**[Daily Scrum Notes Nov 6 2024](agile_artifacts/DailyScrum_Nov06.md)**
 
-**[Sprint Task Board and Burndown Update 2]()**
+**[Daily Scrum Notes Nov 10 2024](agile_artifacts/DailyScrum_Nov10.md)**
+
+**[Daily Scrum Notes Nov 13 2024](agile_artifacts/DailyScrum_Nov13.md)**
+
+
 
 ### UNIT TEST EVIDENCE
-**[Unit Test Pass Screenshot]()**
+
+**[Unit Test File](grb/project/test.py)**
+
+**Passing Unit Tests Screen Cap**
+**![Unit Test Pass Screenshot](agile_artifacts/images/UnitTests_Nov13.png)**
 
 ### WORKING SOFTWARE 
 **[GRB:]()**
