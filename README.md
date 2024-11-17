@@ -168,6 +168,7 @@ a feature request for adding images to recipes which we will take into account t
 user interacted with the application, they requested we fix some of the small issues with form entry which we added as
 an item to the upcoming sprint.
 
-**[Sprint Retrospective](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731877341639519?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+**[Sprint Retrospective:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731877341639519?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Screen capture of team fun completing sprint retrospective.
 
 
