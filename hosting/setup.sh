@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Generally run from teh root directory, not this spot
+
 # Install git and python
 sudo yum install -y git python pip
 
