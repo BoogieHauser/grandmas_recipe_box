@@ -96,10 +96,78 @@ that they may be cooking for.
 
 # SPRINT 1
 
-[Kanban Board](https://doylead.atlassian.net/jira/software/projects/E71/boards/2?atlOrigin=eyJpIjoiMzNiODIxZTdmNDEyNDUwMjhkMzVkY2Q3OTFlM2VhNzMiLCJwIjoiaiJ9)
+### FORECAST
 
-[Burndown Chart](https://doylead.atlassian.net/jira/software/projects/E71/boards/2/reports/burndown?source=sidebar&atlOrigin=eyJpIjoiMGZhNTc1MDY4NzI4NGM1NmI2NGU2YjUyN2ZiNDMzNGYiLCJwIjoiaiJ9)
+**Forecasted Number of Story Points:** 25
+
+**Forecast Rationale:** We chose this number of story points based on skill levels, number of team members, and
+scheduling impediments. Our stories are all very small so, as a team, we decided to try and tackle 25.5 points for our
+first sprint. The primary impediment for our team is scheduling for mod programming sessions. We have 5 team members in
+three separate time zones. We have currently committed meeting twice weekly for two hours with the caveat of augmenting 
+as necessary to ensure minimum viable product by the end of the sprint.
+
+**[Backlog Planning Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1730938293987819?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+This is evidence that only developers participated in the sprint planning and move of PBIs into sprint.
+
+### KANBAN AND BURNDOWN
+**[Kanban Board:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2?atlOrigin=eyJpIjoiMzNiODIxZTdmNDEyNDUwMjhkMzVkY2Q3OTFlM2VhNzMiLCJwIjoiaiJ9)**
+Kanban board for Sprint 1.
+
+**[Burndown Chart:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2/reports/burndown?source=sidebar&atlOrigin=eyJpIjoiMGZhNTc1MDY4NzI4NGM1NmI2NGU2YjUyN2ZiNDMzNGYiLCJwIjoiaiJ9)**
+Burndown chart for sprint 1
 
 
+### SCRUM AND MOB PROGRAMMING EVIDENCE
+**[Daily Scrum/Mob Programming 1:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1730944745702459?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+First daily scrum and first mob programming session.
+
+**[Daily Scrum/ Mob Programming 2:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731269669117479?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Second daily scrum and mob programming session.
+
+**[Daily Scrum/ Mob Programming 3:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731545160518449?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Third daily scrum and mob programming session.
+
+
+### SPRINT GOAL QUESTIONS, SPRINT TASK BOARD, AND BURNDOWN UPDATES
+
+**What did we do to help meet sprint goal?**
+**What do we plan to do to meet the sprint goal?**
+**Do we have any impediments?** 
+**What are our impediments?** 
+**What do we plan to do to remove them?**
+
+Answers to all of these questions along with task board/ burndown updates can be found in the following links:
+
+**[Daily Scrum Notes Nov 6 2024](agile_artifacts/DailyScrum_Nov06.md)**
+
+**[Daily Scrum Notes Nov 10 2024](agile_artifacts/DailyScrum_Nov10.md)**
+
+**[Daily Scrum Notes Nov 13 2024](agile_artifacts/DailyScrum_Nov13.md)**
+
+
+
+### UNIT TEST EVIDENCE
+
+**[Unit Test File](grb/project/test.py)**
+
+**Passing Unit Tests Screen Cap**
+**![Unit Test Pass Screenshot](agile_artifacts/images/UnitTests_Nov13.png)**
+
+### WORKING SOFTWARE 
+**[GRB:](http://18.209.48.115:8000/)**
+Link to functional Grandma's Recipe Box.
+
+### SPRINT REVIEW AND SPRINT RETROSPECTIVE
+**[Stakeholder Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731874075043669?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Screen capture of stakeholder in sprint review.
+
+**Stakeholder Requests:**
+We met with our stakeholder and made adjustments to prioritize their needs. Editing and tagging recipes was their
+highest priority so we ensured that those and related backlog items were at the top of the next sprint. We also had
+a feature request for adding images to recipes which we will take into account the following sprint. Lastly, when the 
+user interacted with the application, they requested we fix some of the small issues with form entry which we added as
+an item to the upcoming sprint.
+
+**[Sprint Retrospective](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731877341639519?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 
 

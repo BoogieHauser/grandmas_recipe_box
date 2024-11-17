@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>View recipes!</title>
+{% endblock %}
+
+{% block body %}
+    <h1> {{ recipe.title }} </h1>
+    <div>
+        {% autoescape off %}
+        Prep time: {{ prepTime }}<br>
+        Cook time: {{ cookTime }}<br>
+        Combined time: {{ combinedTime }}<br>
+        Servings: {{ recipe.servings }}<br>
+        Ingredients: {{ formattedIngredients }}
+        Instructions: {{ formattedInstructions }}
+        {% endautoescape %}
+    </div>
+
+    <div>
+        <a href="/deleteRecipe/{{ recipe.id }}">Delete this recipe</a>
+    </div>
+
+{% endblock %}

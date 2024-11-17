@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>Browse recipes!</title>
+{% endblock %}
+
+{% block body %}
+    <h1>All My Recipes</h1>
+    <div>
+        <ul>
+        {% for recipe in recipes %}
+            <li><a href="/viewRecipe/{{ recipe.id }}">{{ recipe.title }}</a></li>
+        {% empty %}
+            <li>No recipes found :( </li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <a href="/addRecipe">Please add a new recipe!</a>
+    </div>
+
+
+
+{% endblock %}
