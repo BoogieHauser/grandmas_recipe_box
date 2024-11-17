@@ -157,9 +157,18 @@ Answers to all of these questions along with task board/ burndown updates can be
 **[GRB:](http://18.209.48.115:8000/)**
 Link to functional Grandma's Recipe Box.
 
-### STAKEHOLDER
+### SPRINT REVIEW AND SPRINT RETROSPECTIVE
 **[Stakeholder Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731874075043669?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Screen capture of stakeholder in sprint review.
+
+**Stakeholder Requests:**
+We met with our stakeholder and made adjustments to prioritize their needs. Editing and tagging recipes was their
+highest priority so we ensured that those and related backlog items were at the top of the next sprint. We also had
+a feature request for adding images to recipes which we will take into account the following sprint. Lastly, when the 
+user interacted with the application, they requested we fix some of the small issues with form entry which we added as
+an item to the upcoming sprint.
+
+**[Sprint Retrospective](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731877341639519?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 
 
 
