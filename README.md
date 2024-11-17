@@ -154,11 +154,11 @@ Answers to all of these questions along with task board/ burndown updates can be
 **![Unit Test Pass Screenshot](agile_artifacts/images/UnitTests_Nov13.png)**
 
 ### WORKING SOFTWARE 
-**[GRB:]()**
+**[GRB:](http://18.209.48.115:8000/)**
 Link to functional Grandma's Recipe Box.
 
 ### STAKEHOLDER
-**[Stakeholder Evidence:]()**
+**[Stakeholder Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731874075043669?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Screen capture of stakeholder in sprint review.
 
 
