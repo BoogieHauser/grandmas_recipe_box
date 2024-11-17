@@ -171,4 +171,3 @@ an item to the upcoming sprint.
 **[Sprint Retrospective](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731877341639519?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 
 
-
