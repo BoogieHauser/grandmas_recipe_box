@@ -114,7 +114,7 @@ This is evidence that only developers participated in the sprint planning and mo
 Kanban board for Sprint 1.
 
 **[Burndown Chart:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2/reports/burndown?source=sidebar&atlOrigin=eyJpIjoiMGZhNTc1MDY4NzI4NGM1NmI2NGU2YjUyN2ZiNDMzNGYiLCJwIjoiaiJ9)**
-Burndown chart for sprint 1
+In order to access sprint 1's chart, use the dropdown menu labeled "Sprint" and select "Sprint ending 11/18/2024".
 
 
 ### SCRUM AND MOB PROGRAMMING EVIDENCE
@@ -161,6 +161,9 @@ Link to functional Grandma's Recipe Box.
 **[Stakeholder Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731874075043669?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Screen capture of stakeholder in sprint review.
 
+**[Sprint Review Notes:](agile_artifacts/SprintReview_Nov17.md)**
+Notes from our sprint review on 11/17/2024.
+
 **Stakeholder Requests:**
 We met with our stakeholder and made adjustments to prioritize their needs. Editing and tagging recipes was their
 highest priority so we ensured that those and related backlog items were at the top of the next sprint. We also had
@@ -170,5 +173,8 @@ an item to the upcoming sprint.
 
 **[Sprint Retrospective:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731877341639519?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Screen capture of team fun completing sprint retrospective.
+
+**[Sprint Rectrospective Notes:](agile_artifacts/SprintRetrospective_Nov17.md)**
+Notes from our sprint retrospective on 11/17/2024.
 
 
