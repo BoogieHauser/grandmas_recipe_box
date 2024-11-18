@@ -111,7 +111,9 @@ This is evidence that only developers participated in the sprint planning and mo
 
 ### KANBAN AND BURNDOWN
 **[Kanban Board:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2?atlOrigin=eyJpIjoiMzNiODIxZTdmNDEyNDUwMjhkMzVkY2Q3OTFlM2VhNzMiLCJwIjoiaiJ9)**
-Kanban board for Sprint 1.
+Kanban board for Sprints 1 and 2.  Unfortunately, we "closed" Sprint 1 in Jira, which removed those items from the board, 
+though we were able to re-open it later.  We are happy to confirm that, despite technical difficulties, we have been
+using a Kanban board as an information radiator.
 
 **[Burndown Chart:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2/reports/burndown?source=sidebar&atlOrigin=eyJpIjoiMGZhNTc1MDY4NzI4NGM1NmI2NGU2YjUyN2ZiNDMzNGYiLCJwIjoiaiJ9)**
 In order to access sprint 1's chart, use the dropdown menu labeled "Sprint" and select "Sprint ending 11/18/2024".
