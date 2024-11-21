@@ -180,3 +180,13 @@ Screen capture of team fun completing sprint retrospective.
 Notes from our sprint retrospective on 11/17/2024.
 
 
+# SPRINT 2
+
+### FORECAST
+
+**Forecasted Number of Story Points:** 10
+
+**Forecast Rationale:** Last sprint, we completed 9.5 story points.  Using "Yesterday's Weather", we believe we'll
+complete roughly the same amount of story points this sprint.  Notably we believe we have the opportunity to be slightly
+more optimistic this sprint as we will be introducing additional pair programming sessions, though their effect has not
+yet been empirically observed.

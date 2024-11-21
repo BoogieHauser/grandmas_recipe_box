@@ -21,6 +21,8 @@ from . import views
 urlpatterns = [
     #path("admin/", admin.site.urls),
     path("addRecipe", views.addRecipe, name="addRecipe"),
+    # url to edit a recipe
+    path("addRecipe/<int:prev_id>", views.addRecipe, name="editRecipe"),
     path("viewRecipe/<int:id>", views.viewRecipe, name="viewRecipe"),
     path("deleteRecipe/<int:id>", views.deleteRecipe, name="deleteRecipe"),
     path("", views.browseRecipe, name="browseRecipe")

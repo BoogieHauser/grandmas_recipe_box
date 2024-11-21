@@ -7,3 +7,4 @@ class AddRecipe(forms.Form):
     servings = forms.IntegerField(label="Servings", min_value=1, max_value=16)
     ingredients = forms.CharField(widget=forms.Textarea)
     instructions = forms.CharField(widget=forms.Textarea)
+    prev_id = forms.IntegerField(widget=forms.HiddenInput(), required=False)
