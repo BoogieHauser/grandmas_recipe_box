@@ -1,0 +1,1 @@
+web: gunicorn grb.project.wsgi:application
