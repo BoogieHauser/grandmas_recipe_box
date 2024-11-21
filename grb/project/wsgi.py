@@ -33,7 +33,7 @@ print("GRB Path:", grb_path)
 print("Workspace Path:", workspace_path)
 print("sys.path:", sys.path)
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "grb.project.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
 
 
 from django.core.wsgi import get_wsgi_application
