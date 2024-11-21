@@ -5,10 +5,53 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Add New Recipes</h1>
-    <form action="addRecipe" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="submit">
-    </form>
+
+    <style>
+        .button {
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width:100%;
+        margin-top:30px;
+      }
+      button:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+      }
+      .addRecipeForm {
+        margin-top:40px;
+        text-align:left;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .mainDiv {
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          flex-direction:column;
+      }
+    </style>
+
+    <div class="mainDiv">
+        <h1 style="text-align:center;">Add New Recipes</h1>
+        <form class="addRecipeForm" action="{% url 'addRecipe' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <!--<input type="submit" value="submit">-->
+            <input type="hidden" name="prev_id" value="{{ prev_id }}">
+            <button class="button" type="submit" value="submit">
+                Submit
+            </button>
+        </form>
+    </div>
+
 {% endblock %}
