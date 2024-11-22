@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-^+5@&4wz4a5*uccwu)esg=3z%_eig&#ewe-@u=vb42my1=-$lj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'grb-app-tgpq5.ondigitalocean.app'
-    ]
-
+# ALLOWED_HOSTS = [
+#     '127.0.0.1',
+#     'grb-app-tgpq5.ondigitalocean.app'
+#     ]
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 # Application definition
 
