@@ -5,18 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e9bd821-76b7-4186-87fb-f84e7e8d8e16" name="Changes" comment="Update readme def of ready">
-      <change afterPath="$PROJECT_DIR$/grb/project/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grb/project/templates/addRecipe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/grandmas_recipe_box.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/grandmas_recipe_box.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipes/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipes/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grb/project/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/grb/project/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/grb/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/grb/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/grb/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/grb/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/static/grandma.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/grandma.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/templates/addRecipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/templates/addRecipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/templates/browseRecipes.html" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/templates/browseRecipes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/templates/viewRecipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/templates/viewRecipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/project/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/grb/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/runServer.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grb/runTests.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hosting/runRemote.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hosting/setup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
-    <list id="245136d4-23f3-48e5-9b47-b035b7ebf1db" name="Changes by danielbodner" comment="">
-      <change beforePath="$PROJECT_DIR$/grb/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/grb/project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grb/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/grb/project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grb/project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/grb/project/views.py" afterDir="false" />
-    </list>
+    <list id="245136d4-23f3-48e5-9b47-b035b7ebf1db" name="Changes by danielbodner" comment="" />
     <list id="8c215fd6-84c6-48a0-a0f7-f2a2c46e4b0a" name="Changes by vpost" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +85,7 @@
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/doylead/Coding/Harvard/E71/grandmas_recipe_box",
+    "last_opened_file_path": "/home/boogiehauser/PycharmProjects/grandmas_recipe_box/grb",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,11 +95,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/grb" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/grb" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PY-242.21829.153" />
-        <option value="bundled-python-sdk-464836ebc622-b74155a9e76b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.21829.153" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.22855.92" />
+        <option value="bundled-python-sdk-b068d85d1acf-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.22855.92" />
       </set>
     </attachedChunks>
   </component>
@@ -92,6 +122,7 @@
       <updated>1730147960407</updated>
       <workItem from="1730147961774" duration="14964000" />
       <workItem from="1730848428949" duration="12655000" />
+      <workItem from="1732298033155" duration="643000" />
     </task>
     <task id="LOCAL-00001" summary="Lay out readme">
       <option name="closed" value="true" />
@@ -206,7 +237,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/grb/project/views.py</url>
+          <url>file://$PROJECT_DIR$/recipes/views.py</url>
           <line>44</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
