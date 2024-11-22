@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e9bd821-76b7-4186-87fb-f84e7e8d8e16" name="Changes" comment="major restructuring for digital ocean">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2e9bd821-76b7-4186-87fb-f84e7e8d8e16" name="Changes" comment="allow hosts secrets">
       <change beforePath="$PROJECT_DIR$/grb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/grb/settings.py" afterDir="false" />
     </list>
     <list id="245136d4-23f3-48e5-9b47-b035b7ebf1db" name="Changes by danielbodner" comment="" />
@@ -93,7 +92,7 @@
       <updated>1730147960407</updated>
       <workItem from="1730147961774" duration="14964000" />
       <workItem from="1730848428949" duration="12655000" />
-      <workItem from="1732298033155" duration="1272000" />
+      <workItem from="1732298033155" duration="1462000" />
     </task>
     <task id="LOCAL-00001" summary="Lay out readme">
       <option name="closed" value="true" />
@@ -183,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732298933283</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="allow hosts secrets">
+      <option name="closed" value="true" />
+      <created>1732299427283</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732299427283</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +218,8 @@
     <MESSAGE value="Update readme formatting and backlog rationale" />
     <MESSAGE value="Update readme def of ready" />
     <MESSAGE value="major restructuring for digital ocean" />
-    <option name="LAST_COMMIT_MESSAGE" value="major restructuring for digital ocean" />
+    <MESSAGE value="allow hosts secrets" />
+    <option name="LAST_COMMIT_MESSAGE" value="allow hosts secrets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
