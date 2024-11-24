@@ -156,7 +156,7 @@ Answers to all of these questions along with task board/ burndown updates can be
 **![Unit Test Pass Screenshot](agile_artifacts/images/UnitTests_Nov13.png)**
 
 ### WORKING SOFTWARE 
-**[GRB:](http://18.209.48.115:8000/)**
+**[GRB:](https://grb-jryjm.ondigitalocean.app/)**
 Link to functional Grandma's Recipe Box.
 
 ### SPRINT REVIEW AND SPRINT RETROSPECTIVE
@@ -190,3 +190,9 @@ Notes from our sprint retrospective on 11/17/2024.
 complete roughly the same amount of story points this sprint.  Notably we believe we have the opportunity to be slightly
 more optimistic this sprint as we will be introducing additional pair programming sessions, though their effect has not
 yet been empirically observed.
+
+
+
+### WORKING SOFTWARE 
+**[GRB:](https://grb-jryjm.ondigitalocean.app/)**
+Link to functional Grandma's Recipe Box.
