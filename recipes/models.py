@@ -1,4 +1,5 @@
 from django.db import models
+from taggit.managers import TaggableManager
 
 class Recipe(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
@@ -7,6 +8,7 @@ class Recipe(models.Model):
     prepMinutes = models.IntegerField(null=False, blank=False)
     cookMinutes = models.IntegerField(null=False, blank=False)
     servings = models.IntegerField(null=False, blank=False)
+    tags = TaggableManager()
 
     def getIngredients(self):
         html = []

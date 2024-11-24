@@ -45,13 +45,47 @@
         <h1 style="text-align:center;">Add New Recipes</h1>
         <form class="addRecipeForm" action="{% url 'addRecipe' %}" method="post">
             {% csrf_token %}
-            {{ form }}
-            <!--<input type="submit" value="submit">-->
-            <input type="hidden" name="prev_id" value="{{ prev_id }}">
+            <!-- {{ form }} -->
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="title" placeholder="Title" value="{{ prevRecipe.title }}">
+            </div>
+            <div class="form-group">
+                <label>Prep Time (Minutes)</label>
+                <input type="text" name="prepMinutes" placeholder="Prep Time" value="{{ prevRecipe.prepMinutes }}">
+            </div>
+            <div class="form-group">
+                <label>Cook Time (Minutes)</label>
+                <input type="text" name="cookMinutes" placeholder="Cook Time" value="{{ prevRecipe.cookMinutes }}">
+            </div>
+            <div class="form-group">
+                <label>Servings</label>
+                <input type="text" name="servings" placeholder="Number of servings" value="{{ prevRecipe.servings }}">
+            </div>
+            <div class="form-group">
+                <label>Ingredients</label>
+                <input type="text" name="ingredients" placeholder="Separate by line breaks. On each line: Quantity, Unit, Ingredient" value="{{ prevRecipe.ingredients }}">
+            </div>
+            <div class="form-group">
+                <label>Instructions</label>
+                <input type="text" name="instructions" placeholder="Separate by line breaks." value="{{ prevRecipe.instructions }}">
+            </div>
+            <div class="form-group">
+                <label>Tags</label>
+                <input type="text" data-role="tagsinput" class="form-control" name="tags">
+            </div>
+            <div class="form-group">
+                <input type="hidden"  class="form-control" name="id" value="{{ id }}">
+            </div>
             <button class="button" type="submit" value="submit">
                 Submit
             </button>
         </form>
+        <p>Common Tags:
+            {% for mt in common_tags %}
+                <a href="#" class="badge badge-success">{{mt}}</a>
+            {% endfor %}
+        </p>
     </div>
 
 {% endblock %}

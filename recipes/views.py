@@ -5,37 +5,35 @@ import os
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from wheel.cli import tags_f
+
 from .models import Recipe
-from .forms import AddRecipe
+from .forms import RecipeForm
 
 def addRecipe(request, prev_id=-1):
     # If we have submitted data inside a form to add or edit a recipe
 
+    form = RecipeForm(request.POST)
+    print(form)
+    print(form.is_valid())
     if request.method == "POST":
-        form = AddRecipe(request.POST)
 
         if form.is_valid():
             # TODO Add new recipe vs edit?
+
             print(f'form: {form}')
             print(f'cleaned:{form.cleaned_data}')
 
-            # check if id exists in db
-            #     update
-            # else
-            #     new entry
-            if form.cleaned_data['prev_id'] == -1:
-                newRecipe = Recipe(title = form.cleaned_data['title'],
-                                   ingredients = form.cleaned_data['ingredients'],
-                                   instructions = form.cleaned_data['instructions'],
-                                   prepMinutes = form.cleaned_data['prepMinutes'],
-                                   cookMinutes = form.cleaned_data['cookMinutes'],
-                                   servings = form.cleaned_data['servings']
-                                   )
+            # if form.cleaned_data['id'] == -1:
+            if 'id' not in form.cleaned_data:
+                newRecipe = form.save(commit=False)
                 newRecipe.save()
+                form.save_m2m()
 
                 return HttpResponseRedirect(f"/viewRecipe/{newRecipe.id}")
+
             else:
-                prevRecipe = Recipe.objects.get(id=form.cleaned_data['prev_id'])
+                prevRecipe = Recipe.objects.get(id=form.cleaned_data['id'])
                 prevRecipe.title = form.cleaned_data['title']
                 prevRecipe.ingredients = form.cleaned_data['ingredients']
                 prevRecipe.instructions = form.cleaned_data['instructions']
@@ -51,30 +49,33 @@ def addRecipe(request, prev_id=-1):
             pass # TODO - Show error
 
     else:
-        # The GET route - Loading a form and pre-populating data (i editing) or instructions (if a new recipe)
-        form = AddRecipe()
+        # The GET route - Loading a form and pre-populating data (if editing) or instructions (if a new recipe)
+        #form = AddRecipe()
 
         # If id is not negative one, it was specified in the URL.  Use the ID specified in the URL to pre-populate
         # the form (simulating an edit with as much information as possible pre-provided)
+
         if prev_id != -1:
             prevRecipe = Recipe.objects.get(id=prev_id)
-            form.fields['title'].initial = prevRecipe.title
-            form.fields['ingredients'].initial = prevRecipe.ingredients
-            form.fields['instructions'].initial = prevRecipe.instructions
-            form.fields['prepMinutes'].initial = prevRecipe.prepMinutes
-            form.fields['cookMinutes'].initial = prevRecipe.cookMinutes
-            form.fields['servings'].initial = prevRecipe.servings
+        #     form.fields['title'].initial = prevRecipe.title
+        #     form.fields['ingredients'].initial = prevRecipe.ingredients
+        #     form.fields['instructions'].initial = prevRecipe.instructions
+        #     form.fields['prepMinutes'].initial = prevRecipe.prepMinutes
+        #     form.fields['cookMinutes'].initial = prevRecipe.cookMinutes
+        #     form.fields['servings'].initial = prevRecipe.servings
 
         # If the id is negative one, it was not specified in the URL.  Here we pre-populate the form only with
         # syntax instructions for ingredient and instruction fields
         else:
-            form.fields['ingredients'].initial = "Separate by line breaks.\nOn each line: Quantity, Unit, Ingredient"
-            form.fields['instructions'].initial = "Separate by line breaks."
+            prevRecipe = None
+        #     form.fields['ingredients'].initial = "Separate by line breaks.\nOn each line: Quantity, Unit, Ingredient"
+        #     form.fields['instructions'].initial = "Separate by line breaks."
 
         # Return the form to be completed by the user
         return render(request, "addRecipe.html", {
             "form": form,
-            "prev_id": prev_id
+            "id": prev_id,
+            "prevRecipe": prevRecipe
         })
 
 def viewRecipe(request, id):
