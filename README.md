@@ -92,7 +92,7 @@ that they may be cooking for.
 - Developers have had the opportunity to ask questions
 
 
-
+---
 
 # SPRINT 1
 
@@ -108,6 +108,7 @@ as necessary to ensure minimum viable product by the end of the sprint.
 
 **[Backlog Planning Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1730938293987819?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 This is evidence that only developers participated in the sprint planning and move of PBIs into sprint.
+
 
 ### KANBAN AND BURNDOWN
 **[Kanban Board:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2?atlOrigin=eyJpIjoiMzNiODIxZTdmNDEyNDUwMjhkMzVkY2Q3OTFlM2VhNzMiLCJwIjoiaiJ9)**
@@ -181,11 +182,12 @@ Screen capture of team fun completing sprint retrospective.
 **[Sprint Rectrospective Notes:](agile_artifacts/SprintRetrospective_Nov17.md)**
 Notes from our sprint retrospective on 11/17/2024.
 
+---
+
 
 # SPRINT 2
 
 ### FORECAST
-
 **Forecasted Number of Story Points:** 10
 
 **Forecast Rationale:** Last sprint, we completed 9.5 story points.  Using "Yesterday's Weather", we believe we'll
@@ -193,8 +195,110 @@ complete roughly the same amount of story points this sprint.  Notably we believ
 more optimistic this sprint as we will be introducing additional pair programming sessions, though their effect has not
 yet been empirically observed.
 
+**[Backlog Planning Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1731877341639519?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+This is evidence that only developers participated in the sprint planning and move of PBIs into sprint.
+
+
+### KANBAN AND BURNDOWN
+**[Kanban Board:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2?atlOrigin=eyJpIjoiMzNiODIxZTdmNDEyNDUwMjhkMzVkY2Q3OTFlM2VhNzMiLCJwIjoiaiJ9)**
+Kanban board for Sprints 1 and 2.  Unfortunately, we "closed" Sprint 1 in Jira, which removed those items from the board, 
+though we were able to re-open it later.  We are happy to confirm that, despite technical difficulties, we have been
+using a Kanban board as an information radiator.
+
+**[Burndown Chart:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2/reports/burndown?source=sidebar&atlOrigin=eyJpIjoiMGZhNTc1MDY4NzI4NGM1NmI2NGU2YjUyN2ZiNDMzNGYiLCJwIjoiaiJ9)**
+In order to access sprint 2's chart, use the dropdown menu labeled "Sprint" and select "Sprint ending 12/1/2024".
+
+
+### SCRUM AND MOB PROGRAMMING EVIDENCE
+**[Daily Scrum/Mob Programming 11/20:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732153488777829?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Daily scrum and mob programming session.
+
+**[Pair Programming 11/22:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732647651844289?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Pair programming session.
+
+**[Daily Scrum/ Mob Programming 11/24:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732480073567879?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Daily scrum and mob programming session.
+
+**[Pair Programming 11/25:]()**
+Pair programming session.
+
+**[Daily Scrum/ Mob Programming 11/27:]()**
+Daily scrum and mob programming session.
+
+
+### SPRINT GOAL QUESTIONS, SPRINT TASK BOARD, AND BURNDOWN UPDATES
+**What did we do to help meet sprint goal?**
+**What do we plan to do to meet the sprint goal?**
+**Do we have any impediments?** 
+**What are our impediments?** 
+**What do we plan to do to remove them?**
+
+Answers to all of these questions along with task board/ burndown updates can be found in the following links:
+
+**[Daily Scrum Notes Nov 20 2024](agile_artifacts/DailyScrum_Nov20.md)**
+
+**[Daily Scrum Notes Nov 24 2024](agile_artifacts/DailyScrum_Nov24.md)**
+
+**[Daily Scrum Notes Nov 27 2024](agile_artifacts/DailyScrum_Nov27.md)**
+
+
+### UNIT TEST EVIDENCE
+**[Unit Test File](recipes/test.py)**
+
+**Passing Unit Tests Screen Cap**
+**![Unit Test Pass Screenshot]()**
 
 
 ### WORKING SOFTWARE 
 **[GRB:](https://grb-jryjm.ondigitalocean.app/)**
 Link to functional Grandma's Recipe Box.
+
+
+### CI/CD
+**[Digital Ocean/ Github Integration:]()**
+Application is running on Digital Ocean pulling from github.
+
+**[Github Main Branch Only:]()**
+Devs only committing to main with no additional branches on the repo.
+
+**[Automatic Build On Push To Main:]()**
+Code builds on Digital Ocean when pushed to main on github.
+
+**[Test Run On Build:]()**
+Tests run every time Digital Ocean builds code.
+
+**[Evidence of CI System:]()**
+Evidence of CI system as a whole.
+
+**[Green Build Deploys:]()**
+CD system only deploys to production when build is green.
+
+**[Red Build Does Not Deploy:]()**
+When build fails it does not deploy to production.
+
+**[Execution of Additional Tests Before Deployment:]()**
+Additional tests are executed on successful deployment.
+
+
+
+### SPRINT REVIEW AND SPRINT RETROSPECTIVE
+**[Stakeholder Evidence:](h)**
+Screen capture of stakeholder in sprint review.
+
+**[Sprint Review Notes:]()**
+Notes from our sprint review on 11/17/2024.
+
+**Stakeholder Requests:**
+We met with our stakeholder and made adjustments to prioritize their needs. Editing and tagging recipes was their
+highest priority so we ensured that those and related backlog items were at the top of the next sprint. We also had
+a feature request for adding images to recipes which we will take into account the following sprint. Lastly, when the 
+user interacted with the application, they requested we fix some of the small issues with form entry which we added as
+an item to the upcoming sprint.
+
+**[Sprint Retrospective:]()**
+Screen capture of team fun completing sprint retrospective.
+
+**[Sprint Rectrospective Notes:]()**
+Notes from our sprint retrospective on 11/17/2024.
+
+---
