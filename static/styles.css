@@ -1,0 +1,127 @@
+.button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width:100%;
+  margin-top:30px;
+}
+button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+.addRecipeForm {
+  margin-top:40px;
+  text-align:left;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.mainDiv {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1;
+}
+.footer {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+.footer-left {
+    flex: 0 0 auto;
+    text-align: left;
+    padding-left: 50px;
+}
+.footer-left p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.footer-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-left li {
+    padding-left: 20px;
+}
+.footer-left ul li {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+}
+.footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.footer-center img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.5rem;
+}
+.footer-center p {
+    margin: 0;
+    font-size: 1rem;
+}
+.browseDiv {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        border: 1px solid black;
+        width: 50%;
+        border-radius: 20px;
+        padding-top: 0px;
+        padding-bottom: 20px;
+      }
+.browseHeader {
+        padding-top:20px;
+        padding-bottom: 20px;
+        background-color: black;
+        width: 100%;
+        text-align: center;
+        border-radius: 20px 20px 0px 0px;
+        margin: 0px;
+        color: white;
+      }
+.listItem {
+        padding: 12px;
+        border-bottom: 1px solid black;
+        width: 100%;
+      }
+a {
+        color: black;
+      }
+li:hover {
+        background-color: lightgray; /* Highlight the entire row on hover */
+      }
+.browseMainDiv {
+        display:flex;
+        justify-content:center;
+      }

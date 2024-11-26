@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link href="{% static 'styles.css' %}" rel="stylesheet">
         {% block head %}
         {% endblock %}
     </head>
@@ -29,13 +31,27 @@
           </div>
         </nav>
 
-        <div>
+        <div class="content">
             {% block body %}
             {% endblock %}
         </div>
 
-
-
+        <footer class="footer">
+          <div class="footer-left">
+              <h4><strong>Team Fun:</strong></h4>
+              <ul>
+                  <li>Andrew Doyle - Scrum Master / Developer</li>
+                  <li>Mark Aylward - Product Owner / Developer</li>
+                  <li>Daniel Bodner - Developer</li>
+                  <li>Karun Subramanian - Developer</li>
+                  <li>Veronika Post - Developer</li>
+              </ul>
+          </div>
+          <div class="footer-center">
+              <img src="{% static 'grandma.png' %}" width="50" height="50" class="d-inline-block align-top" style="margin-top:-15px;" alt="">
+              <p>&copy; 2024 Your Django Project. All rights reserved.</p>
+          </div>
+      </footer>
 
     </body>
 

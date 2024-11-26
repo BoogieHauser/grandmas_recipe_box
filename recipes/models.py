@@ -10,19 +10,25 @@ class Recipe(models.Model):
     servings = models.IntegerField(null=False, blank=False)
     tags = TaggableManager()
 
-    def getIngredients(self):
+    def get_ingredients_list(self):
+        return self.ingredients.split("\n")
+
+    def get_formatted_ingredients(self):
         html = []
         html.append("<ul>")
-        lines = self.ingredients.split("\n")
+        lines = self.get_ingredients_list()
         for line in lines:
             html.append("<li>" + self.clean_line(line) + "</li>")
         html.append("</ul>")
         return "".join(html)
 
-    def getInstructions(self):
+    def get_instructions_list(self):
+        return self.instructions.split('\n')
+
+    def get_formatted_instructions(self):
         html = []
         html.append("<ol>")
-        lines = self.instructions.split("\n")
+        lines = self.get_instructions_list()
         for line in lines:
             html.append("<li>" + line + "</li>")
         html.append("</ol>")
@@ -42,7 +48,11 @@ class Recipe(models.Model):
         clean_line = " ".join(sep_line)
         return clean_line
 
+    def get_tag_list(self):
+        return list(self.tags.names())
 
+    def get_formatted_tags(self):
+        return ','.join(['"{tag}"'.format(tag = tag) for tag in self.get_tag_list()])
 
 
 
