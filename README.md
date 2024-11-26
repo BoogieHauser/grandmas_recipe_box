@@ -261,7 +261,7 @@ Application is running on Digital Ocean pulling from github.
 **[Github Main Branch Only:]()**
 Devs only committing to main with no additional branches on the repo.
 
-**[Automatic Build On Push To Main:]()**
+**[Automatic Build On Push To Main:]()** 
 Code builds on Digital Ocean when pushed to main on github.
 
 **[Test Run On Build:]()**
