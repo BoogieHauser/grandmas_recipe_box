@@ -34,7 +34,7 @@ pour cereal in""")
         # Tag creation is verified later, as this is a custom object querying it is more complex
 
     def test_clean_line(self):
-        self.assertEqual(self.recipe.clean_line("a,b,c"), "a b c d")
+        self.assertEqual(self.recipe.clean_line("a,b,c"), "a b c")
 
     def test_get_ingredients_list(self):
         self.assertEqual(self.recipe.get_ingredients_list(), ["8,oz,milk", "1,cup,Lucky Charms"])
