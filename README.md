@@ -255,7 +255,7 @@ Link to functional Grandma's Recipe Box.
 
 
 ### CI/CD
-**[Digital Ocean/ Github Integration:]()**
+**[Digital Ocean/ Github Integration:]()** 
 Application is running on Digital Ocean pulling from github.
 
 **[Github Main Branch Only:]()**
