@@ -219,7 +219,7 @@ Pair programming session.
 **[Daily Scrum/ Mob Programming 11/24:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732480073567879?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Daily scrum and mob programming session.
 
-**[Pair Programming 11/25:]()**
+**[Pair Programming 11/25:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732587013352969)**
 Pair programming session.
 
 **[Daily Scrum/ Mob Programming 11/27:]()**
