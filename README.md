@@ -222,7 +222,7 @@ Daily scrum and mob programming session.
 **[Pair Programming 11/25:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732587013352969)**
 Pair programming session.
 
-**[Daily Scrum/ Mob Programming 11/27:]()**
+**[Daily Scrum/ Mob Programming 11/27:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732752991863869?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Daily scrum and mob programming session.
 
 
@@ -282,7 +282,7 @@ Additional tests are executed on successful deployment.
 
 
 ### SPRINT REVIEW AND SPRINT RETROSPECTIVE
-**[Stakeholder Evidence:](h)**
+**[Stakeholder Evidence:]()**
 Screen capture of stakeholder in sprint review.
 
 **[Sprint Review Notes:]()**
