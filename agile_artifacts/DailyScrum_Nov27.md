@@ -15,6 +15,7 @@ Impediments:
 
 Done:
 * Reached 20 unit tests
+* Added filter functionality by a single tag
 
 TODO:
 * Use POST request to delete objects

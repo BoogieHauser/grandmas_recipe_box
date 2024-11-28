@@ -134,25 +134,25 @@ pour cereal in""")
             )
             recipe.full_clean()
 
-    # def test_add_recipe(self):
-    #     recipe = {
-    #         "title" : "my recipe",
-    #         "ingredients" : "1,,food",
-    #         "instructions" : "cook",
-    #         "prepMinutes" : 60,
-    #         "cookMinutes" : 30,
-    #         "servings" : 2,
-    #         "tags" : '"Tag 1", "Tag 2"'
-    #     }
-    #     id = crud_add_recipe(recipe)
-    #     saved_recipe = Recipe.objects.get(pk=id)
-    #     self.assertEqual(saved_recipe.title, "my recipe")
-    #     self.assertEqual(saved_recipe.ingredients, "1,,food")
-    #     self.assertEqual(saved_recipe.instructions, "cook")
-    #     self.assertEqual(saved_recipe.prepMinutes, 60)
-    #     self.assertEqual(saved_recipe.cookMinutes, 30)
-    #     self.assertEqual(saved_recipe.servings, 2)
-    #     self.assertEqual(saved_recipe.get_tag_list(), ["Tag 1", "Tag 2"])
+    def test_add_recipe(self):
+        recipe = {
+            "title" : "my recipe",
+            "ingredients" : "1,,food",
+            "instructions" : "cook",
+            "prepMinutes" : 60,
+            "cookMinutes" : 30,
+            "servings" : 2,
+            "tags" : ['Tag 1', 'Tag 2']
+        }
+        id = crud_add_recipe(recipe)
+        saved_recipe = Recipe.objects.get(pk=id)
+        self.assertEqual(saved_recipe.title, "my recipe")
+        self.assertEqual(saved_recipe.ingredients, "1,,food")
+        self.assertEqual(saved_recipe.instructions, "cook")
+        self.assertEqual(saved_recipe.prepMinutes, 60)
+        self.assertEqual(saved_recipe.cookMinutes, 30)
+        self.assertEqual(saved_recipe.servings, 2)
+        self.assertEqual(saved_recipe.get_tag_list(), ["Tag 1", "Tag 2"])
 
     # Test basic HTMl returns
     def test_addRecipe_view(self):
