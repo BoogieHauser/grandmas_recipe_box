@@ -12,7 +12,12 @@
             <div style="justify-content:left; width:100%;">
                 <ul>
                 {% for recipe in recipes %}
-                    <li class="listItem"><a href="/viewRecipe/{{ recipe.id }}">{{ recipe.title }}</a></li>
+                    <li class="listItem">
+                        <a href="/viewRecipe/{{ recipe.id }}">{{ recipe.title }}</a>
+                        {% for mt in recipe.get_tag_list %}
+                            <a href="/browseRecipes/{{ mt }}" class="badge badge-success">{{mt}}</a>
+                        {% endfor %}
+                    </li>
                 {% empty %}
                     <li class="listItem">No recipes found :( </li>
                 {% endfor %}

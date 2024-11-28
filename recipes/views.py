@@ -4,6 +4,7 @@ from django.shortcuts import render
 
 from .models import Recipe
 from .forms import RecipeForm
+from .crud import crud_add_recipe
 
 def addRecipe(request, prev_id=-1):
     # If we have submitted data inside a form to add or edit a recipe
@@ -15,14 +16,17 @@ def addRecipe(request, prev_id=-1):
 
             # The hidden field is not present in cleaned_data, so we pull it from data
             provided_id = form.data.get('id', -1)
+            print(provided_id)
 
             # This is a new recipe
-            if provided_id == -1:
-                newRecipe = form.save(commit=False)
-                newRecipe.save()
-                form.save_m2m()
+            if int(provided_id) == -1:
+                # newRecipe = form.save(commit=False)
+                # newRecipe.save()
+                # form.save_m2m()
+                new_id = crud_add_recipe(form.cleaned_data)
+                print(new_id)
 
-                return HttpResponseRedirect(f"/viewRecipe/{newRecipe.id}")
+                return HttpResponseRedirect(f"/viewRecipe/{new_id}")
 
             # Editing an existing recipe
             else:
@@ -82,8 +86,13 @@ def viewRecipe(request, id):
         "tags": tags
     })
 
-def browseRecipe(request, tags=None):
-    recipes = Recipe.objects.all() # TODO add filtering
+def browseRecipe(request, filter = None):
+    # Filter by tag
+    if filter:
+        recipes = Recipe.objects.filter(tags__name__in = [filter])
+
+    else:
+        recipes = Recipe.objects.all()
 
     return render(request, "browseRecipes.html", {
         "recipes": recipes

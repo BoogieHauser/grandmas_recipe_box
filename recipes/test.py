@@ -1,9 +1,12 @@
 from xml.dom import VALIDATION_ERR
 from django.core.exceptions import ValidationError
+from django.template.base import kwarg_re
 
 from django.test import TestCase
 from .models import Recipe
 from taggit.managers import TaggableManager
+from .crud import crud_add_recipe
+from django.urls import reverse
 
 class RecipeTest(TestCase):
     def setUp(self):
@@ -130,4 +133,60 @@ pour cereal in""")
                 cookMinutes = 30
             )
             recipe.full_clean()
+
+    # def test_add_recipe(self):
+    #     recipe = {
+    #         "title" : "my recipe",
+    #         "ingredients" : "1,,food",
+    #         "instructions" : "cook",
+    #         "prepMinutes" : 60,
+    #         "cookMinutes" : 30,
+    #         "servings" : 2,
+    #         "tags" : '"Tag 1", "Tag 2"'
+    #     }
+    #     id = crud_add_recipe(recipe)
+    #     saved_recipe = Recipe.objects.get(pk=id)
+    #     self.assertEqual(saved_recipe.title, "my recipe")
+    #     self.assertEqual(saved_recipe.ingredients, "1,,food")
+    #     self.assertEqual(saved_recipe.instructions, "cook")
+    #     self.assertEqual(saved_recipe.prepMinutes, 60)
+    #     self.assertEqual(saved_recipe.cookMinutes, 30)
+    #     self.assertEqual(saved_recipe.servings, 2)
+    #     self.assertEqual(saved_recipe.get_tag_list(), ["Tag 1", "Tag 2"])
+
+    # Test basic HTMl returns
+    def test_addRecipe_view(self):
+        response = self.client.get(reverse("addRecipe"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'addRecipe.html')
+
+    def test_editRecipe_view(self):
+        response = self.client.get(reverse("editRecipe", kwargs={"prev_id": 1}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'addRecipe.html')
+
+    def test_viewRecipe_view(self):
+        response = self.client.get(reverse("viewRecipe", kwargs={"id": 1}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'viewRecipe.html')
+
+    def test_index_view(self):
+        response = self.client.get(reverse("browseRecipe"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'browseRecipes.html')
+
+    def test_deleteRecipe_view(self):
+        response = self.client.get(reverse("deleteRecipe", kwargs={"id": 1}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'browseRecipes.html')
+
+    def test_browseRecipes_view(self):
+        response = self.client.get(reverse("browseRecipe2"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'browseRecipes.html')
+
+    def test_browseFilteredRecipes_view(self):
+        response = self.client.get(reverse("filterRecipe", kwargs={"filter": "Vegetarian"}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'browseRecipes.html')
 
