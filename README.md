@@ -279,8 +279,11 @@ When build fails it does not deploy to production.
 **[Previous Version Still Deployed After Red Build:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989649480519?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
 When build fails, Digital Ocean maintains previous working version.
 
-**[Execution of Additional Tests Before Deployment:]()**
+**[Execution of Additional Tests After Deployment:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732990500249499?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
 Additional tests are executed on successful deployment.
+
+**[BONUS: Github Action for Healthy Tests:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732990616243829?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+Github action that tests any updates to code against our test file.
 
 
 
