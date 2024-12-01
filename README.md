@@ -225,6 +225,9 @@ Pair programming session.
 **[Daily Scrum/ Mob Programming 11/27:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732752991863869?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Daily scrum and mob programming session.
 
+**[Pair Programming 11/30:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733012983797299)**
+Pair programming session.
+
 
 ### SPRINT GOAL QUESTIONS, SPRINT TASK BOARD, AND BURNDOWN UPDATES
 **What did we do to help meet sprint goal?**
