@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 from .models import Recipe
 from .forms import RecipeForm
-from .crud import crud_add_recipe
+from .crud import crud_add_recipe, crud_edit_recipe, crud_delete_recipe, crud_get_recipes
 
 def addRecipe(request, prev_id=-1):
     # If we have submitted data inside a form to add or edit a recipe
@@ -19,21 +19,13 @@ def addRecipe(request, prev_id=-1):
 
             # This is a new recipe
             if int(provided_id) == -1:
-                new_id = crud_add_recipe(form.cleaned_data)
-                return HttpResponseRedirect(f"/viewRecipe/{new_id}")
+                id = crud_add_recipe(form.cleaned_data)
 
             # Editing an existing recipe
             else:
-                prevRecipe = Recipe.objects.get(id=provided_id)
-                prevRecipe.title = form.cleaned_data['title']
-                prevRecipe.ingredients = form.cleaned_data['ingredients']
-                prevRecipe.instructions = form.cleaned_data['instructions']
-                prevRecipe.prepMinutes = form.cleaned_data['prepMinutes']
-                prevRecipe.cookMinutes = form.cleaned_data['cookMinutes']
-                prevRecipe.servings = form.cleaned_data['servings']
-                prevRecipe.save()
+                id = crud_edit_recipe(provided_id, form.cleaned_data)
 
-                return HttpResponseRedirect(f"/viewRecipe/{prevRecipe.id}")
+            return HttpResponseRedirect(f"/viewRecipe/{id}")
 
     elif request.method == "GET":
         # The GET route - Loading a form and pre-populating data (if editing) or instructions (if a new recipe)
@@ -41,9 +33,8 @@ def addRecipe(request, prev_id=-1):
 
         # If id is not negative one, it was specified in the URL.  Use the ID specified in the URL to pre-populate
         # the form (simulating an edit with as much information as possible pre-provided)
-
         if prev_id != -1:
-            prevRecipe = Recipe.objects.get(id=prev_id)
+            prevRecipe = crud_get_recipes(id = prev_id)
             taglist = prevRecipe.get_formatted_tags()
 
         # If the id is negative one, it was not specified in the URL.  Here we pre-populate the form only with
@@ -62,7 +53,7 @@ def addRecipe(request, prev_id=-1):
         })
 
 def viewRecipe(request, id):
-    recipe = Recipe.objects.get(pk=id)
+    recipe = crud_get_recipes(id = id)
     formattedIngredients = recipe.get_formatted_ingredients()
     formattedInstructions = recipe.get_formatted_instructions()
     prepTime = recipe.convert_mins_to_hhmm(recipe.prepMinutes)
@@ -80,21 +71,24 @@ def viewRecipe(request, id):
         "tags": tags
     })
 
-def browseRecipe(request, filter = None):
+def browseRecipe(request):
     # Filter by tag
-    if filter:
-        recipes = Recipe.objects.filter(tags__name__in = [filter])
+    tags = request.GET.get('tags', None)
+
+    if tags:
+        # TODO only works for one tag
+        tags = [tags.strip('[]')]
+        recipes = crud_get_recipes(tags = tags)
 
     else:
-        recipes = Recipe.objects.all()
+        recipes = crud_get_recipes()
 
     return render(request, "browseRecipes.html", {
         "recipes": recipes
     })
 
 def deleteRecipe(request, id):
-    Recipe.objects.filter(pk=id).delete()
-    # SomeModel.objects.filter(id=id).delete()
+    crud_delete_recipe(id)
     recipes = Recipe.objects.all()
     return render(request, "browseRecipes.html", {
         "recipes": recipes

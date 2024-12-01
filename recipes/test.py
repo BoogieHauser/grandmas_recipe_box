@@ -5,7 +5,7 @@ from django.template.base import kwarg_re
 from django.test import TestCase
 from .models import Recipe
 from taggit.managers import TaggableManager
-from .crud import crud_add_recipe
+from .crud import crud_add_recipe, crud_edit_recipe, crud_get_recipes, crud_delete_recipe
 from django.urls import reverse
 
 class RecipeTest(TestCase):
@@ -44,14 +44,14 @@ pour cereal in""")
 
     def test_get_formatted_ingredients(self):
         self.assertEqual(self.recipe.get_formatted_ingredients(),
-                         "<ul><li>8 oz milk</li><li>1 cup Lucky Charms</li></ul>")
+                         "<ul><li class='ingredientItem'>8 oz milk</li><li class='ingredientItem'>1 cup Lucky Charms</li></ul>")
 
     def test_get_instructions_list(self):
         self.assertEqual(self.recipe.get_instructions_list(), ["pour milk", "warm it up if needed", "pour cereal in"])
 
     def test_get_formatted_instructions(self):
         self.assertEqual(self.recipe.get_formatted_instructions(),
-                         "<ol><li>pour milk</li><li>warm it up if needed</li><li>pour cereal in</li></ol>")
+                         "<ol><li class='instructionItem'>pour milk</li><li class='instructionItem'>warm it up if needed</li><li class='instructionItem'>pour cereal in</li></ol>")
 
     def test_get_tag_list(self):
         self.assertEqual(self.recipe.get_tag_list(), ['Quick and Easy', 'Vegetarian'])
@@ -154,6 +154,96 @@ pour cereal in""")
         self.assertEqual(saved_recipe.servings, 2)
         self.assertEqual(saved_recipe.get_tag_list(), ["Tag 1", "Tag 2"])
 
+    def test_edit_recipe(self):
+        recipe = {
+            "title" : "my recipe",
+            "ingredients" : "1,,food",
+            "instructions" : "cook",
+            "prepMinutes" : 60,
+            "cookMinutes" : 30,
+            "servings" : 2,
+            "tags" : ['Tag 1', 'Tag 2']
+        }
+        id = crud_add_recipe(recipe)
+        saved_recipe = Recipe.objects.get(pk=id)
+        self.assertEqual(saved_recipe.title, "my recipe")
+        self.assertEqual(saved_recipe.ingredients, "1,,food")
+        self.assertEqual(saved_recipe.instructions, "cook")
+        self.assertEqual(saved_recipe.prepMinutes, 60)
+        self.assertEqual(saved_recipe.cookMinutes, 30)
+        self.assertEqual(saved_recipe.servings, 2)
+        self.assertEqual(saved_recipe.get_tag_list(), ["Tag 1", "Tag 2"])
+
+        edited_recipe = {
+            "title" : "my edited recipe",
+            "ingredients" : "2,,food",
+            "instructions" : "chill",
+            "prepMinutes" : 45,
+            "cookMinutes" : 0,
+            "servings" : 2,
+            "tags" : ['Tag 1', 'Tag 2', 'Tag 3']
+        }
+        crud_edit_recipe(id, edited_recipe) # 1 Refers to previous test
+        saved_recipe = Recipe.objects.get(pk=id)
+        self.assertEqual(saved_recipe.title, "my edited recipe")
+        self.assertEqual(saved_recipe.ingredients, "2,,food")
+        self.assertEqual(saved_recipe.instructions, "chill")
+        self.assertEqual(saved_recipe.prepMinutes, 45)
+        self.assertEqual(saved_recipe.cookMinutes, 0)
+        self.assertEqual(saved_recipe.servings, 2)
+        self.assertEqual(saved_recipe.get_tag_list(), ["Tag 1", "Tag 2", "Tag 3"])
+
+    def test_get_all_recipes(self):
+        all_recipes = Recipe.objects.all()
+        crud_all_recipes = crud_get_recipes()
+        self.assertEqual(len(all_recipes), len(crud_all_recipes))
+        for i in range(len(all_recipes)):
+            self.assertEqual(all_recipes[i].title, crud_all_recipes[i].title)
+            self.assertEqual(all_recipes[i].ingredients, crud_all_recipes[i].ingredients)
+            self.assertEqual(all_recipes[i].instructions, crud_all_recipes[i].instructions)
+            self.assertEqual(all_recipes[i].prepMinutes, crud_all_recipes[i].prepMinutes)
+            self.assertEqual(all_recipes[i].cookMinutes, crud_all_recipes[i].cookMinutes)
+            self.assertEqual(all_recipes[i].servings, crud_all_recipes[i].servings)
+            self.assertEqual(all_recipes[i].tags, crud_all_recipes[i].tags)
+
+    def test_get_one_recipe(self):
+        recipe = {
+            "title" : "my recipe",
+            "ingredients" : "1,,food",
+            "instructions" : "cook",
+            "prepMinutes" : 60,
+            "cookMinutes" : 30,
+            "servings" : 2,
+            "tags" : ['Tag 1', 'Tag 2']
+        }
+        id = crud_add_recipe(recipe)
+        saved_recipe = crud_get_recipes(id = id) # Note slight diffeence from above
+        self.assertEqual(saved_recipe.title, "my recipe")
+        self.assertEqual(saved_recipe.ingredients, "1,,food")
+        self.assertEqual(saved_recipe.instructions, "cook")
+        self.assertEqual(saved_recipe.prepMinutes, 60)
+        self.assertEqual(saved_recipe.cookMinutes, 30)
+        self.assertEqual(saved_recipe.servings, 2)
+        self.assertEqual(saved_recipe.get_tag_list(), ["Tag 1", "Tag 2"])
+
+    # def test_get_filtered_recipes(self): # TODO
+    #     pass
+
+    def test_delete_recipe(self):
+        recipe = {
+            "title": "my recipe",
+            "ingredients": "1,,food",
+            "instructions": "cook",
+            "prepMinutes": 60,
+            "cookMinutes": 30,
+            "servings": 2,
+            "tags": ['Tag 1', 'Tag 2']
+        }
+        id = crud_add_recipe(recipe)
+        crud_get_recipes(id = id)
+        crud_delete_recipe(id = id)
+        self.assertRaises(IndexError, crud_get_recipes, id = id)
+
     # Test basic HTMl returns
     def test_addRecipe_view(self):
         response = self.client.get(reverse("addRecipe"))
@@ -185,8 +275,9 @@ pour cereal in""")
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'browseRecipes.html')
 
-    def test_browseFilteredRecipes_view(self):
-        response = self.client.get(reverse("filterRecipe", kwargs={"filter": "Vegetarian"}))
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'browseRecipes.html')
+    # TODO - Refactored how filtering works
+    # def test_browseFilteredRecipes_view(self):
+    #     response = self.client.get(reverse("filterRecipe", kwargs={"filter": "Vegetarian"}))
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertTemplateUsed(response, 'browseRecipes.html')
 

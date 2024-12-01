@@ -6,6 +6,7 @@
 
 {% block body %}
 
+    <!--
     <div class="browseMainDiv">
         <div class="browseDiv">
             <h1 class="browseHeader">All My Recipes</h1>
@@ -29,6 +30,25 @@
               </button>
             </div>
         </div>
+    </div>
+    -->
+
+    <div class="browseMainDiv">
+      <h1 class="browseHeader">All My Recipes</h1>
+      <div class="gridContainer">
+
+        {% for recipe in recipes %}
+          <div class="gridItem" onclick="location.href='/viewRecipe/{{ recipe.id }}';">
+            <h3>{{ recipe.title }}</h3>
+            {% for mt in recipe.get_tag_list %}
+                <a href="/browseRecipes?tags=[{{ mt }}]" class="badge badge-success">{{mt}}</a>
+            {% endfor %}
+          </div>
+        {% empty %}
+            <h3 class="listItem">No recipes found :( </h3>
+        {% endfor %}
+
+      </div>
     </div>
 
 {% endblock %}

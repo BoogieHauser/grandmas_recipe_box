@@ -18,7 +18,7 @@ class Recipe(models.Model):
         html.append("<ul>")
         lines = self.get_ingredients_list()
         for line in lines:
-            html.append("<li>" + self.clean_line(line) + "</li>")
+            html.append("<li class='ingredientItem'>" + self.clean_line(line) + "</li>")
         html.append("</ul>")
         return "".join(html)
 
@@ -30,7 +30,7 @@ class Recipe(models.Model):
         html.append("<ol>")
         lines = self.get_instructions_list()
         for line in lines:
-            html.append("<li>" + line + "</li>")
+            html.append("<li class='instructionItem'>" + line + "</li>")
         html.append("</ol>")
         return "".join(html)
 

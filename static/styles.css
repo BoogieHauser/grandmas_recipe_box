@@ -1,4 +1,13 @@
-.button {
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.button, .deleteButton {
   background-color: black;
   color: white;
   border: none;
@@ -9,37 +18,70 @@
   transition: all 0.3s ease;
   width:100%;
   margin-top:30px;
+  border: 1px solid black;
 }
+
 button:hover {
   background-color: white;
   color: black;
   border: 1px solid black;
 }
-.addRecipeForm {
+
+.deleteButton {
+  border: 1px solid red;
+  background-color: red;
+}
+
+.deleteButton:hover {
+  color: red;
+  border: 1px solid red;
+  background-color: white;
+}
+
+.pageHeader {
+  text-align:center;
+}
+
+.addRecipeForm, .viewRecipe {
   margin-top:40px;
   text-align:left;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 700px;
 }
+
 .mainDiv {
   display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
 }
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+
+.recipeItem {
+  padding: 0px;
 }
+
+.ingredientItem {
+    margin-top: 5px;
+}
+
+.instructionItem {
+    margin-top: 10px;
+}
+
+.viewRecipeButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 .content {
     flex: 1;
 }
+
 .footer {
     background-color: #f2f2f2;
     display: flex;
@@ -52,76 +94,133 @@ html, body {
     bottom: 0;
     box-sizing: border-box;
     position: relative;
+    margin-top: 40px;
 }
+
 .footer-left {
     flex: 0 0 auto;
     text-align: left;
     padding-left: 50px;
 }
+
 .footer-left p {
     margin: 0;
     font-size: 1rem;
     font-weight: bold;
 }
+
 .footer-left ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .footer-left li {
     padding-left: 20px;
 }
+
 .footer-left ul li {
     font-size: 0.9rem;
     margin: 0.2rem 0;
 }
+
 .footer-center {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
 }
+
 .footer-center img {
     width: 100px;
     height: 100px;
     margin-bottom: 0.5rem;
 }
+
 .footer-center p {
     margin: 0;
     font-size: 1rem;
 }
+
+.commonTags {
+  margin-top: 20px;
+}
+
 .browseDiv {
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        border: 1px solid black;
-        width: 50%;
-        border-radius: 20px;
-        padding-top: 0px;
-        padding-bottom: 20px;
-      }
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    border: 1px solid black;
+    width: 50%;
+    border-radius: 20px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
 .browseHeader {
-        padding-top:20px;
-        padding-bottom: 20px;
-        background-color: black;
-        width: 100%;
-        text-align: center;
-        border-radius: 20px 20px 0px 0px;
-        margin: 0px;
-        color: white;
-      }
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    color: black;
+}
+
 .listItem {
-        padding: 12px;
-        border-bottom: 1px solid black;
-        width: 100%;
-      }
-a {
-        color: black;
-      }
-li:hover {
-        background-color: lightgray; /* Highlight the entire row on hover */
-      }
+    padding: 12px;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
 .browseMainDiv {
-        display:flex;
-        justify-content:center;
-      }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gridContainer {
+    display: grid;
+    column-gap: 40px;
+    row-gap: 25px;
+    grid-template-columns: auto auto auto;
+    background-color: white;
+    padding: 10px;
+    width: 90%;
+}
+
+.gridItem {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 20px;
+
+    font-size: 30px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gridItem:hover {
+    box-shadow: none;
+    background-color: #f2f2f2;
+}
+
+a {
+    color: black;
+}
+
+a.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+    .recipes-container {
+        grid-template-columns: repeat(2, 300px);
+    }
+}
+
+@media (max-width: 768px) {
+    .recipes-container {
+        grid-template-columns: repeat(1, 300px);
+    }
+}

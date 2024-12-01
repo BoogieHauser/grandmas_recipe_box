@@ -6,6 +6,7 @@
 
 {% block body %}
 
+    <!--
     <div class="mainDiv">
         <h1> {{ recipe.title }} </h1>
         <div>
@@ -22,8 +23,9 @@
             Instructions: {{ formattedInstructions }}
             {% endautoescape %}
         </div>
-
+        -->
         <!-- Edit a recipe is done through an addRecipe page with auto populated data --->
+        <!--
         <div>
             <form action="{% url 'editRecipe' prev_id=recipe.id %}">
                 <button class="button" type="submit" value="Edit Recipe" >
@@ -37,6 +39,44 @@
             </form>
         </div>
 
+    </div>
+    -->
+
+    <div class="mainDiv">
+        <div class="viewRecipe">
+            <h1 class="pageHeader">{{ recipe.title }}</h1>
+            <hr>
+            {% autoescape off %}
+            <h5 class="recipeItem"><strong>Prep time:</strong> {{ prepTime }}</h5>
+            <h5 class="recipeItem"><strong>Cook time:</strong> {{ cookTime }}</h5>
+            <h5 class="recipeItem"><strong>Combined time:</strong> {{ combinedTime }}</h5>
+            <h5 class="recipeItem"><strong>Servings:</strong> {{ recipe.servings }}</h5>
+            <div class="recipeItem">
+              <strong>Tags:</strong>
+              {% for mt in tags %}
+                <a href="#" class="badge badge-success">{{mt}}</a>
+              {% endfor %}
+            </div>
+            <hr>
+            <h5 class="recipeItem"><strong>Ingredients:</strong> {{ formattedIngredients }}</h5>
+            <h5 class="recipeItem"><strong>Instructions:</strong> {{ formattedInstructions }}</h5>
+
+            {% endautoescape %}
+
+            <!-- Edit a recipe is done through an addRecipe page with auto populated data --->
+            <div class="viewRecipeButtons">
+                <form action="{% url 'editRecipe' prev_id=recipe.id %}">
+                    <button class="button" type="submit" value="Edit Recipe" >
+                        Edit Recipe
+                    </button>
+                </form>
+                <form action="{% url 'deleteRecipe' id=recipe.id %}">
+                    <button class="deleteButton" type="submit" value="Delete Recipe" >
+                        Delete this Recipe
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
 
 {% endblock %}
