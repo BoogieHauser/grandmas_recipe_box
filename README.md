@@ -246,7 +246,7 @@ Answers to all of these questions along with task board/ burndown updates can be
 **[Unit Test File](recipes/test.py)**
 
 **Passing Unit Tests Screen Cap**
-**![Unit Test Pass Screenshot]()**
+**![Unit Test Pass Screenshot](agile_artifacts/images/UnitTests_Nov27.png)**
 
 
 ### WORKING SOFTWARE 
@@ -255,29 +255,35 @@ Link to functional Grandma's Recipe Box.
 
 
 ### CI/CD
-**[Digital Ocean/ Github Integration:]()** 
+**[Digital Ocean/ Github Integration:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989469379799?thread_ts=1732987644.710599&cid=C07TUEH8HFD)** 
 Application is running on Digital Ocean pulling from github.
 
-**[Github Main Branch Only:]()**
+**[Github Main Branch Only:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732988873394569?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
 Devs only committing to main with no additional branches on the repo.
 
-**[Automatic Build On Push To Main:]()** 
+**[Automatic Build On Push To Main:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989406294559?thread_ts=1732987644.710599&cid=C07TUEH8HFD)** 
 Code builds on Digital Ocean when pushed to main on github.
 
-**[Test Run On Build:]()**
+**[Test Run On Build:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989365831199?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
 Tests run every time Digital Ocean builds code.
 
-**[Evidence of CI System:]()**
+**[Evidence of CI System:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989560334519?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
 Evidence of CI system as a whole.
 
-**[Green Build Deploys:]()**
+**[Green Build Deploys:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989590754429?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
 CD system only deploys to production when build is green.
 
-**[Red Build Does Not Deploy:]()**
+**[Red Build Does Not Deploy:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989615049719?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
 When build fails it does not deploy to production.
 
-**[Execution of Additional Tests Before Deployment:]()**
+**[Previous Version Still Deployed After Red Build:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989649480519?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+When build fails, Digital Ocean maintains previous working version.
+
+**[Execution of Additional Tests After Deployment:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732990500249499?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
 Additional tests are executed on successful deployment.
+
+**[BONUS: Github Action for Healthy Tests:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732990616243829?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+Github action that tests any updates to code against our test file.
 
 
 
