@@ -13,6 +13,6 @@ Stakeholder feedback:
 Suggestions:
 * Further down the list
   * Share recipes
-  * Add recipes to a calnedar
-  * filter by cook time
+  * Add recipes to a calendar
+  * Filter by cook time
 * Stakeholder has suggested that they are more interested in *functionality* than *style*
