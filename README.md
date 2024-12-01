@@ -292,10 +292,10 @@ Github action that tests any updates to code against our test file.
 
 ### SPRINT REVIEW AND SPRINT RETROSPECTIVE
 **[Stakeholder Evidence:]()**
-Screen capture of stakeholder in sprint review.
+Screen capture of stakeholder in sprint review on 12/1/2024.
 
 **[Sprint Review Notes:]()**
-Notes from our sprint review on 11/17/2024.
+Notes from our sprint review on 12/1/2024.
 
 **Stakeholder Requests:**
 We met with our stakeholder and made adjustments to prioritize their needs. Editing and tagging recipes was their
@@ -308,6 +308,6 @@ an item to the upcoming sprint.
 Screen capture of team fun completing sprint retrospective.
 
 **[Sprint Rectrospective Notes:]()**
-Notes from our sprint retrospective on 11/17/2024.
+Notes from our sprint retrospective on 12/1/2024.
 
 ---
