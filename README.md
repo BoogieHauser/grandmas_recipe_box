@@ -225,6 +225,9 @@ Pair programming session.
 **[Daily Scrum/ Mob Programming 11/27:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732752991863869?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Daily scrum and mob programming session.
 
+**[Pair Programming 11/30:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733012983797299)**
+Pair programming session.
+
 
 ### SPRINT GOAL QUESTIONS, SPRINT TASK BOARD, AND BURNDOWN UPDATES
 **What did we do to help meet sprint goal?**
@@ -288,23 +291,21 @@ Github action that tests any updates to code against our test file.
 
 
 ### SPRINT REVIEW AND SPRINT RETROSPECTIVE
-**[Stakeholder Evidence:]()**
-Screen capture of stakeholder in sprint review.
+**[Stakeholder Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733084537553419?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Screen capture of stakeholder in sprint review on 12/1/2024.
 
-**[Sprint Review Notes:]()**
-Notes from our sprint review on 11/17/2024.
+**[Sprint Review Notes:](agile_artifacts/SprintReview_Dec1.md)**
+Notes from our sprint review on 12/1/2024.
 
 **Stakeholder Requests:**
-We met with our stakeholder and made adjustments to prioritize their needs. Editing and tagging recipes was their
-highest priority so we ensured that those and related backlog items were at the top of the next sprint. We also had
-a feature request for adding images to recipes which we will take into account the following sprint. Lastly, when the 
-user interacted with the application, they requested we fix some of the small issues with form entry which we added as
-an item to the upcoming sprint.
+Stakeholder requested re-prioritization after having seen advancements in product. The expressed higher level interest
+in adding non-mandatory images to recipes, security for recipes, basic search functionality, and a notes field for
+each recipe.
 
-**[Sprint Retrospective:]()**
+**[Sprint Retrospective:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733085384451709?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Screen capture of team fun completing sprint retrospective.
 
-**[Sprint Rectrospective Notes:]()**
-Notes from our sprint retrospective on 11/17/2024.
+**[Sprint Rectrospective Notes:](agile_artifacts/SprintRetrospective_Dec1.md)**
+Notes from our sprint retrospective on 12/1/2024.
 
 ---
