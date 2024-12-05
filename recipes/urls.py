@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
     #path("admin/", admin.site.urls),
     path("addRecipe", views.addRecipe, name="addRecipe"),
@@ -29,3 +30,4 @@ urlpatterns = [
     path("browseRecipes", views.browseRecipe, name="browseRecipe2"),
     #path("browseRecipes/<filter>", views.browseRecipe, name="filterRecipe"),
 ]
+

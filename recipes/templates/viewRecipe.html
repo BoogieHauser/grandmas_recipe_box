@@ -45,6 +45,11 @@
     <div class="mainDiv">
         <div class="viewRecipe">
             <h1 class="pageHeader">{{ recipe.title }}</h1>
+            {% if recipe.image %}
+                <div style="display:flex;justify-content:center;align-items:center;">
+                    <img src="{{ recipe.thumbnail.url}}" alt="{{ recipe.title }}">
+                </div>
+            {% endif %}
             <hr>
             {% autoescape off %}
             <h5 class="recipeItem"><strong>Prep time:</strong> {{ prepTime }}</h5>

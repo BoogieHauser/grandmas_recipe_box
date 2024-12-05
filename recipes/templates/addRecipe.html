@@ -58,7 +58,7 @@
 
     <div class="mainDiv">
         <h1 class="pageHeader">Add New Recipes</h1>
-        <form class="addRecipeForm" action="{% url 'addRecipe' %}" method="post">
+        <form class="addRecipeForm" action="{% url 'addRecipe' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
                 <label>Title</label><br>
@@ -91,6 +91,10 @@
             </div>
             <div class="form-group">
                 <input type="hidden"  class="form-control" name="id" value="{{ id }}">
+            </div>
+            <div class="form-group">
+                <label>Picture</label><br>
+                <input type="file" name="image">
             </div>
             <button class="button" type="submit" value="submit">
                 Submit

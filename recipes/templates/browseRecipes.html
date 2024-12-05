@@ -40,6 +40,11 @@
         {% for recipe in recipes %}
           <div class="gridItem" onclick="location.href='/viewRecipe/{{ recipe.id }}';">
             <h3>{{ recipe.title }}</h3>
+              {% if recipe.image %}
+                <div style="display:block; margin-left:auto; margin-right:auto;">
+                    <img src="{{ recipe.thumbnail.url }}" alt="{{ recipe.title }}">
+                </div>
+              {% endif %}
             {% for mt in recipe.get_tag_list %}
                 <a href="/browseRecipes?tags=[{{ mt }}]" class="badge badge-success">{{mt}}</a>
             {% endfor %}

@@ -1,5 +1,7 @@
 from django.db import models
 from taggit.managers import TaggableManager
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFit
 
 class Recipe(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
@@ -9,6 +11,13 @@ class Recipe(models.Model):
     cookMinutes = models.IntegerField(null=False, blank=False)
     servings = models.IntegerField(null=False, blank=False)
     tags = TaggableManager()
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    thumbnail = ImageSpecField(
+        source = 'image',
+        processors = [ResizeToFit(300, 300)],
+        format = 'JPEG',
+        options = {'quality':80}
+    )
 
     def get_ingredients_list(self):
         return self.ingredients.split("\n")

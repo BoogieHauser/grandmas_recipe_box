@@ -6,10 +6,18 @@ from .models import Recipe
 from .forms import RecipeForm
 from .crud import crud_add_recipe, crud_edit_recipe, crud_delete_recipe, crud_get_recipes
 
+
 def addRecipe(request, prev_id=-1):
     # If we have submitted data inside a form to add or edit a recipe
-    form = RecipeForm(request.POST)
+    form = RecipeForm(request.POST, request.FILES)
     if request.method == "POST":
+
+        # print(form)
+        # print(form.data)
+        # print(form.errors)
+        # print(form.is_valid())
+        # print(form.cleaned_data)
+        # print(request.FILES.get("image"))
 
         # Check if form is valid
         if form.is_valid():
@@ -26,6 +34,10 @@ def addRecipe(request, prev_id=-1):
                 id = crud_edit_recipe(provided_id, form.cleaned_data)
 
             return HttpResponseRedirect(f"/viewRecipe/{id}")
+
+        # Form is not valid
+        else:
+            return HttpResponseRedirect(f"/")
 
     elif request.method == "GET":
         # The GET route - Loading a form and pre-populating data (if editing) or instructions (if a new recipe)

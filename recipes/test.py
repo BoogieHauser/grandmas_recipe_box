@@ -217,7 +217,7 @@ pour cereal in""")
             "tags" : ['Tag 1', 'Tag 2']
         }
         id = crud_add_recipe(recipe)
-        saved_recipe = crud_get_recipes(id = id) # Note slight diffeence from above
+        saved_recipe = crud_get_recipes(id = id) # Note slight difference from above
         self.assertEqual(saved_recipe.title, "my recipe")
         self.assertEqual(saved_recipe.ingredients, "1,,food")
         self.assertEqual(saved_recipe.instructions, "cook")
