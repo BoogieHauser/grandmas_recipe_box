@@ -5,3 +5,5 @@ typing_extensions==4.12.2
 gunicorn==21.2.0
 django-taggit==6.1.0
 django-imagekit==5.0.0
+behave==1.2.7.dev6
+django-behave==0.1.6

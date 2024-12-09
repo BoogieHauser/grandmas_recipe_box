@@ -13,7 +13,7 @@ def addRecipe(request, prev_id=-1):
     if request.method == "POST":
 
         # print(form)
-        # print(form.data)
+        print(form.data)
         # print(form.errors)
         # print(form.is_valid())
         # print(form.cleaned_data)
@@ -31,6 +31,8 @@ def addRecipe(request, prev_id=-1):
 
             # Editing an existing recipe
             else:
+                if form.data.get('maintain-image', 'Remove Image') == 'Keep Image':
+                     form.cleaned_data.pop('image')
                 id = crud_edit_recipe(provided_id, form.cleaned_data)
 
             return HttpResponseRedirect(f"/viewRecipe/{id}")

@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'recipes',
-    'taggit'
+    'taggit',
+    'behave_django'
 ]
 
 MIDDLEWARE = [

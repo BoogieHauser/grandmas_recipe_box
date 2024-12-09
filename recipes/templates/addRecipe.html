@@ -5,57 +5,6 @@
 {% endblock %}
 
 {% block body %}
-
-    <!--
-    <div class="mainDiv">
-        <h1 style="text-align:center;">Add New Recipes</h1>
-        <form class="addRecipeForm" action="{% url 'addRecipe' %}" method="post">
-            {% csrf_token %}
-
-            <div class="form-group">
-                <label>Title</label>
-                <input type="text" name="title" placeholder="Title" value="{{ prevRecipe.title }}">
-            </div>
-            <div class="form-group">
-                <label>Prep Time (Minutes)</label>
-                <input type="text" name="prepMinutes" placeholder="Prep Time" value="{{ prevRecipe.prepMinutes }}">
-            </div>
-            <div class="form-group">
-                <label>Cook Time (Minutes)</label>
-                <input type="text" name="cookMinutes" placeholder="Cook Time" value="{{ prevRecipe.cookMinutes }}">
-            </div>
-            <div class="form-group">
-                <label>Servings</label>
-                <input type="text" name="servings" placeholder="Number of servings" value="{{ prevRecipe.servings }}">
-            </div>
-            <div class="form-group">
-                <label>Ingredients</label>
-                <textarea name="ingredients" placeholder="Separate by line breaks. On each line:&#10;Quantity, Unit, Ingredient" cols="40" rows="4">{{ prevRecipe.ingredients }}</textarea>
-            </div>
-            <div class="form-group">
-                <label>Instructions</label>
-                <textarea name="instructions" placeholder="Separate by line breaks." cols="40" rows="4">{{ prevRecipe.instructions }}</textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Tags</label>
-                <input type="text" data-role="tagsinput" class="form-control" name="tags" value="{{ tag_list }}">
-            </div>
-            <div class="form-group">
-                <input type="hidden"  class="form-control" name="id" value="{{ id }}">
-            </div>
-            <button class="button" type="submit" value="submit">
-                Submit
-            </button>
-        </form>
-        <p>Common Tags:
-            {% for mt in common_tags %}
-                <a href="#" class="badge badge-success">{{mt}}</a>
-            {% endfor %}
-        </p>
-    </div>
-    -->
-
     <div class="mainDiv">
         <h1 class="pageHeader">Add New Recipes</h1>
         <form class="addRecipeForm" action="{% url 'addRecipe' %}" method="post" enctype="multipart/form-data">
@@ -94,7 +43,20 @@
             </div>
             <div class="form-group">
                 <label>Picture</label><br>
-                <input type="file" name="image">
+                {% if prevRecipe.image %}
+                    <div style="display:flex;justify-content:center;align-items:center;">
+                        <img src="{{ prevRecipe.thumbnail.url}}" alt="{{ prevRecipe.title }}">
+                    </div>
+                    <div style="display:flex;justify-content:center;align-items:center;">
+                        <input type="radio" id="keep-image" name="maintain-image" value="Keep Image" required checked>
+                        <label style="margin:5px;" for="keep-image">Keep Image</label><br>
+                        <input type="radio" id="remove-image" name="maintain-image" value="Delete Image">
+                        <label style="margin:5px;" for="remove-image">Remove Image</label>
+                    </div>
+                {% else %}
+                    <input type="file" name="image">
+                {% endif %}
+
             </div>
             <button class="button" type="submit" value="submit">
                 Submit
