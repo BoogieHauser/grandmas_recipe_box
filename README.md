@@ -309,7 +309,7 @@ Notes from our sprint retrospective on 12/1/2024.
 
 ---
 
-# SPRINT 2
+# SPRINT 3
 
 ### FORECAST
 **Forecasted Number of Story Points:** 9
@@ -317,5 +317,104 @@ Notes from our sprint retrospective on 12/1/2024.
 **Forecast Rationale:** In our first sprint, we completed 9.5 story points.  In our second sprint, we completed 8 story 
 points.  Using "Yesterday's Weather", we believe we'll complete roughly the same amount of story points this sprint.  
 We remain optimistic we will be able to increase velocity as we learn to work together and build a solid base.
+
+**[Backlog Planning Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733085384451709?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+This is evidence that only developers participated in the sprint planning and move of PBIs into sprint.
+
+
+### KANBAN AND BURNDOWN
+**[Kanban Board:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2?atlOrigin=eyJpIjoiMzNiODIxZTdmNDEyNDUwMjhkMzVkY2Q3OTFlM2VhNzMiLCJwIjoiaiJ9)**
+Kanban board for Sprints 1, 2, and 3. Please select all sprints from the "sprint" dropdown menu. We are happy to confirm 
+that we have been using a Kanban board as an information radiator.
+
+**[Burndown Chart:](https://doylead.atlassian.net/jira/software/projects/E71/boards/2/reports/burndown?source=sidebar&atlOrigin=eyJpIjoiMGZhNTc1MDY4NzI4NGM1NmI2NGU2YjUyN2ZiNDMzNGYiLCJwIjoiaiJ9)**
+In order to access sprint 2's chart, use the dropdown menu labeled "Sprint" and select "Sprint ending 12/15/2024".
+
+
+### SCRUM AND MOB PROGRAMMING EVIDENCE
+**[Daily Scrum/Mob Programming 12/4:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733357342989999?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Daily scrum and mob programming session.
+
+**[Daily Scrum/ Mob Programming 12/8:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733688578061229?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
+Daily scrum and mob programming session.
+
+**[Daily Scrum/ Mob Programming 12/12:]()**
+Daily scrum and mob programming session.
+
+**[Independent Research Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733090583953109)**
+We each completed independent research prior to mob programming sessions. This was one of our goals from our previous
+sprint retrospective.
+
+
+### SPRINT GOAL QUESTIONS, SPRINT TASK BOARD, AND BURNDOWN UPDATES
+**What did we do to help meet sprint goal?**
+**What do we plan to do to meet the sprint goal?**
+**Do we have any impediments?** 
+**What are our impediments?** 
+**What do we plan to do to remove them?**
+
+Answers to all of these questions along with task board/ burndown updates can be found in the following links:
+
+**[Daily Scrum Notes Dec 4 2024](agile_artifacts/DailyScrum_Dec04.md)**
+
+**[Daily Scrum Notes Dec 8 2024](agile_artifacts/DailyScrum_Dec08.md)**
+
+**[Daily Scrum Notes Dec 12 2024](agile_artifacts/DailyScrum_Dec12.md)**
+
+
+### UNIT TEST EVIDENCE
+**[TDD Unit Test File](recipes/test.py)**
+
+**[BDD Test Directory](features)**
+
+**Passing Unit Tests Screen Cap**
+**![Unit Test Pass Screenshot]()**
+
+
+### WORKING SOFTWARE 
+**[GRB:](https://grb-jryjm.ondigitalocean.app/)**
+Link to functional Grandma's Recipe Box.
+
+
+### CI/CD
+**[Digital Ocean/ Github Integration:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989469379799?thread_ts=1732987644.710599&cid=C07TUEH8HFD)** 
+Application is running on Digital Ocean pulling from github.
+
+**[Github Main Branch Only:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732988873394569?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+Devs only committing to main with no additional branches on the repo.
+
+**[Automatic Build On Push To Main:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989406294559?thread_ts=1732987644.710599&cid=C07TUEH8HFD)** 
+Code builds on Digital Ocean when pushed to main on github.
+
+**[Test Run On Build:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989365831199?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+Tests run every time Digital Ocean builds code.
+
+**[Evidence of CI System:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989560334519?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+Evidence of CI system as a whole.
+
+**[Green Build Deploys:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989590754429?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+CD system only deploys to production when build is green.
+
+**[Red Build Does Not Deploy:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989615049719?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+When build fails it does not deploy to production.
+
+**[Previous Version Still Deployed After Red Build:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989649480519?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+When build fails, Digital Ocean maintains previous working version.
+
+**[Execution of Additional Tests After Deployment:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732990500249499?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+Additional tests are executed on successful deployment.
+
+**[BONUS: Github Action for Healthy Tests:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732990616243829?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+Github action that tests any updates to code against our test file.
+
+
+
+### SPRINT REVIEW AND SPRINT RETROSPECTIVE
+**[Sprint Retrospective:]()**
+Screen capture of team fun completing sprint retrospective.
+
+**[Sprint Rectrospective Notes:](agile_artifacts/SprintRetrospective_Dec15.md)**
+Notes from our sprint retrospective on 12/15/2024.
+
 
 ---
