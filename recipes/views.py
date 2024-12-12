@@ -5,6 +5,7 @@ from django.shortcuts import render
 from .models import Recipe
 from .forms import RecipeForm
 from .crud import crud_add_recipe, crud_edit_recipe, crud_delete_recipe, crud_get_recipes
+from .processing import process_image_dict
 
 
 def addRecipe(request, prev_id=-1):
@@ -13,7 +14,7 @@ def addRecipe(request, prev_id=-1):
     if request.method == "POST":
 
         # print(form)
-        print(form.data)
+        # print(form.data)
         # print(form.errors)
         # print(form.is_valid())
         # print(form.cleaned_data)
@@ -31,9 +32,9 @@ def addRecipe(request, prev_id=-1):
 
             # Editing an existing recipe
             else:
-                if form.data.get('maintain-image', 'Remove Image') == 'Keep Image':
-                     form.cleaned_data.pop('image')
-                id = crud_edit_recipe(provided_id, form.cleaned_data)
+                recipe_dict = process_image_dict(form.data, form.cleaned_data)
+                print(recipe_dict)
+                id = crud_edit_recipe(provided_id, recipe_dict)
 
             return HttpResponseRedirect(f"/viewRecipe/{id}")
 

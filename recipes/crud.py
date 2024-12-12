@@ -8,12 +8,16 @@ def crud_add_recipe(recipe_dict):
     return recipe.id
 
 def crud_edit_recipe(prev_id, recipe_dict):
-    tags = recipe_dict.pop('tags')
+    include_tags = False
+    if 'tags' in recipe_dict:
+        include_tags = True
+        tags = recipe_dict.pop('tags')
     recipe = Recipe.objects.get(id=prev_id)
     for key, val in recipe_dict.items():
         setattr(recipe, key, val)
     recipe.save()
-    recipe.tags.set(tags)
+    if include_tags:
+        recipe.tags.set(tags)
     return recipe.id
 
 def crud_get_recipes(id = -1, tags = ()):

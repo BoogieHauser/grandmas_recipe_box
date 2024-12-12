@@ -8,6 +8,10 @@ from taggit.managers import TaggableManager
 from .crud import crud_add_recipe, crud_edit_recipe, crud_get_recipes, crud_delete_recipe
 from django.urls import reverse
 
+from .processing import process_image_dict
+import tempfile
+
+
 class RecipeTest(TestCase):
     def setUp(self):
         self.recipe = Recipe.objects.create(
@@ -281,3 +285,114 @@ pour cereal in""")
     #     self.assertEqual(response.status_code, 200)
     #     self.assertTemplateUsed(response, 'browseRecipes.html')
 
+    def test_missing_image_info(self):
+        recipe = {
+            "title": "my recipe",
+            "ingredients": "1,,food",
+            "instructions": "cook",
+            "prepMinutes": 60,
+            "cookMinutes": 30,
+            "servings": 2,
+            "tags": ['Tag 1', 'Tag 2'],
+        }
+        self.assertEqual(recipe, process_image_dict(recipe, recipe))
+
+    def test_remove_image_info(self):
+        form_entry = {
+            "title": "my recipe",
+            "ingredients": "1,,food",
+            "instructions": "cook",
+            "prepMinutes": 60,
+            "cookMinutes": 30,
+            "servings": 2,
+            "tags": ['Tag 1', 'Tag 2'],
+            "image": 1,
+            "maintain-image": "Delete Image"
+        }
+        recipe = {
+            "title": "my recipe",
+            "ingredients": "1,,food",
+            "instructions": "cook",
+            "prepMinutes": 60,
+            "cookMinutes": 30,
+            "servings": 2,
+            "tags": ['Tag 1', 'Tag 2'],
+            "image": 5
+        }
+        self.assertEqual(recipe.items(), process_image_dict(form_entry, recipe).items())
+
+    def test_keep_image_info(self):
+        form_entry = {
+            "title": "my recipe",
+            "ingredients": "1,,food",
+            "instructions": "cook",
+            "prepMinutes": 60,
+            "cookMinutes": 30,
+            "servings": 2,
+            "tags": ['Tag 1', 'Tag 2'],
+            "image": 1,
+            "maintain-image": "Keep Image"
+        }
+        recipe = {
+            "title": "my recipe",
+            "ingredients": "1,,food",
+            "instructions": "cook",
+            "prepMinutes": 60,
+            "cookMinutes": 30,
+            "servings": 2,
+            "tags": ['Tag 1', 'Tag 2'],
+            "image": 5
+        }
+        modified_recipe = {
+            "title": "my recipe",
+            "ingredients": "1,,food",
+            "instructions": "cook",
+            "prepMinutes": 60,
+            "cookMinutes": 30,
+            "servings": 2,
+            "tags": ['Tag 1', 'Tag 2'],
+        }
+        self.assertEqual(modified_recipe.items(), process_image_dict(form_entry, recipe).items())
+
+    def test_add_image(self):
+        temp_image = tempfile.NamedTemporaryFile(suffix=".jpg").name
+        recipe = {
+            "title" : "my recipe",
+            "ingredients" : "1,,food",
+            "instructions" : "cook",
+            "prepMinutes" : 60,
+            "cookMinutes" : 30,
+            "servings" : 2,
+            "tags" : ['Tag 1', 'Tag 2'],
+            "image" : temp_image
+        }
+        id = crud_add_recipe(recipe)
+        recipe_with_image = crud_get_recipes(id = id)
+        self.assertEqual(recipe_with_image.image.url, "/media" + temp_image)
+
+    def test_remove_image(self):
+        temp_image = tempfile.NamedTemporaryFile(suffix=".jpg").name
+        recipe = {
+            "title" : "my recipe",
+            "ingredients" : "1,,food",
+            "instructions" : "cook",
+            "prepMinutes" : 60,
+            "cookMinutes" : 30,
+            "servings" : 2,
+            "tags" : ['Tag 1', 'Tag 2'],
+            "image" : temp_image,
+        }
+        id = crud_add_recipe(recipe)
+        recipe_with_image = crud_get_recipes(id = id)
+
+        remove_image_form = recipe
+        remove_image_form["maintain-image"] = "Remove Image"
+        remove_image_form["image"] = None
+        recipe = process_image_dict(remove_image_form, recipe)
+
+        crud_edit_recipe(id, recipe)
+        recipe_without_image = crud_get_recipes(id=id)
+
+        # Checks if there is no image, this is because it returns a
+        # special "None"
+        self.assertEqual(bool(recipe_without_image.image), False)
