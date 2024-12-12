@@ -338,7 +338,7 @@ Daily scrum and mob programming session.
 **[Daily Scrum/ Mob Programming 12/8:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733688578061229?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Daily scrum and mob programming session.
 
-**[Daily Scrum/ Mob Programming 12/12:]()**
+**[Daily Scrum/ Mob Programming 12/11:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733962103275459?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Daily scrum and mob programming session.
 
 **[Independent Research Evidence:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1733090583953109)**
@@ -359,7 +359,7 @@ Answers to all of these questions along with task board/ burndown updates can be
 
 **[Daily Scrum Notes Dec 8 2024](agile_artifacts/DailyScrum_Dec08.md)**
 
-**[Daily Scrum Notes Dec 12 2024](agile_artifacts/DailyScrum_Dec12.md)**
+**[Daily Scrum Notes Dec 11 2024](agile_artifacts/DailyScrum_Dec11.md)**
 
 
 ### UNIT TEST EVIDENCE
