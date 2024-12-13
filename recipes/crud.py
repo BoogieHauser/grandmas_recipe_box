@@ -53,6 +53,6 @@ def crud_get_recipes(id = -1, tags = (), query = "", user = None):
     # Otherwise, return all
     return Recipe.objects.filter(Q(user = user) | Q(public = True))
 
-def crud_delete_recipe(id):
+def crud_delete_recipe(id, user = None):
     Recipe.objects.filter(pk=id).delete()
     return id

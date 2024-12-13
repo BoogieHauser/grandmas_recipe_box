@@ -18,10 +18,10 @@ def addRecipe(request, prev_id=-1):
     if request.method == "POST":
 
         # print(form)
-        # print(form.data)
+        print(form.data)
         # print(form.errors)
         # print(form.is_valid())
-        # print(form.cleaned_data)
+        print(form.cleaned_data)
         # print(request.FILES.get("image"))
 
         # Check if form is valid
