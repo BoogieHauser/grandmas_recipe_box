@@ -348,7 +348,7 @@ sprint retrospective.
 **[Pair Programming 12/12:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1734054932027949)**
 Pair programming session.
 
-**[Pair Programming 12/13:]()**
+**[Pair Programming 12/13:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1734105832089709?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Pair programming session.
 
 
@@ -387,7 +387,7 @@ CI/CD is exactly the same as before with the only addition being that BDD tests 
 
 **[Original CI/CD Evidence](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732987644710599)**
 
-**[BDD Testing Addition to CI/CD Pipeline]()**
+**[BDD Testing Addition to CI/CD Pipeline](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1734105389239519?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
 
 
 
