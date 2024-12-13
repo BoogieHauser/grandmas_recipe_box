@@ -378,6 +378,8 @@ pour cereal in""")
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'browseRecipes.html')
 
+    # test views for register, login, logout, accounts/login
+
     def test_missing_image_info(self):
         recipe = {
             "title": "my recipe",

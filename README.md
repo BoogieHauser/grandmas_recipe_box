@@ -345,6 +345,12 @@ Daily scrum and mob programming session.
 We each completed independent research prior to mob programming sessions. This was one of our goals from our previous
 sprint retrospective.
 
+**[Pair Programming 12/12:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1734054932027949)**
+Pair programming session.
+
+**[Pair Programming 12/13:]()**
+Pair programming session.
+
 
 ### SPRINT GOAL QUESTIONS, SPRINT TASK BOARD, AND BURNDOWN UPDATES
 **What did we do to help meet sprint goal?**
@@ -377,35 +383,11 @@ Link to functional Grandma's Recipe Box.
 
 
 ### CI/CD
-**[Digital Ocean/ Github Integration:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989469379799?thread_ts=1732987644.710599&cid=C07TUEH8HFD)** 
-Application is running on Digital Ocean pulling from github.
+CI/CD is exactly the same as before with the only addition being that BDD tests are run as well as standard TDD tests.
 
-**[Github Main Branch Only:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732988873394569?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
-Devs only committing to main with no additional branches on the repo.
+**[Original CI/CD Evidence](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732987644710599)**
 
-**[Automatic Build On Push To Main:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989406294559?thread_ts=1732987644.710599&cid=C07TUEH8HFD)** 
-Code builds on Digital Ocean when pushed to main on github.
-
-**[Test Run On Build:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989365831199?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
-Tests run every time Digital Ocean builds code.
-
-**[Evidence of CI System:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989560334519?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
-Evidence of CI system as a whole.
-
-**[Green Build Deploys:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989590754429?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
-CD system only deploys to production when build is green.
-
-**[Red Build Does Not Deploy:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989615049719?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
-When build fails it does not deploy to production.
-
-**[Previous Version Still Deployed After Red Build:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732989649480519?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
-When build fails, Digital Ocean maintains previous working version.
-
-**[Execution of Additional Tests After Deployment:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732990500249499?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
-Additional tests are executed on successful deployment.
-
-**[BONUS: Github Action for Healthy Tests:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1732990616243829?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
-Github action that tests any updates to code against our test file.
+**[BDD Testing Addition to CI/CD Pipeline]()**
 
 
 
