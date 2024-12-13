@@ -35,7 +35,6 @@ def crud_edit_recipe(prev_id, recipe_dict, user):
     # (is recipe owner or the recipe is public)
     if matched_recipe.user != user and not matched_recipe.public:
         raise PermissionDenied
-    # recipe = Recipe.objects.get(id=prev_id)
 
     for key, val in recipe_dict.items():
         setattr(matched_recipe, key, val)
@@ -73,6 +72,10 @@ def crud_get_recipes(id = -1, tags = (), query = "", user = None):
     # Otherwise, return all
     return Recipe.objects.filter(Q(user = user) | Q(public = True))
 
-def crud_delete_recipe(id, user = None):
-    Recipe.objects.filter(pk=id).delete()
+def crud_delete_recipe(id, user):
+    recipe = crud_get_recipes(id, user=user)
+    if recipe.user == user:
+        Recipe.objects.filter(pk=id).delete()
+    else:
+        raise PermissionDenied
     return id

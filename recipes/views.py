@@ -118,9 +118,10 @@ def browseRecipe(request):
         "query": query,
     })
 
+@login_required
 def deleteRecipe(request, id):
-    crud_delete_recipe(id)
-    recipes = Recipe.objects.all()
+    crud_delete_recipe(id, user = request.user)
+    recipes = crud_get_recipes(user = request.user)
     return render(request, "browseRecipes.html", {
         "recipes": recipes
     })

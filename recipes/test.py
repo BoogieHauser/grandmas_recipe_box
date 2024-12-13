@@ -356,7 +356,7 @@ pour cereal in""")
     def test_editRecipe_view(self):
         response = self.client.get(reverse("editRecipe", kwargs={"prev_id": 1}))
         self.assertEqual(response.status_code, 200) # May not have access
-        #self.assertTemplateUsed(response, 'addRecipe.html')
+        self.assertTemplateUsed(response, 'addRecipe.html')
 
     def test_viewRecipe_view(self):
         response = self.client.get(reverse("viewRecipe", kwargs={"id": 1}))
