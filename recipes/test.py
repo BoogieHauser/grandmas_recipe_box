@@ -378,6 +378,21 @@ pour cereal in""")
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'browseRecipes.html')
 
+    def test_login_view(self):
+        response = self.client.get(reverse("login"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'login.html')
+
+    def test_logout_view(self):
+        response = self.client.get(reverse("logout"))
+        self.assertEqual(response.status_code, 302)
+        # This view returns a redirect, not a template
+
+    def test_register_view(self):
+        response = self.client.get(reverse("register"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'register.html')
+
     def test_missing_image_info(self):
         recipe = {
             "title": "my recipe",

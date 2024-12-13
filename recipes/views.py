@@ -16,7 +16,6 @@ def addRecipe(request, prev_id=-1):
     # If we have submitted data inside a form to add or edit a recipe
     form = RecipeForm(request.POST, request.FILES)
     if request.method == "POST":
-
         # print(form)
         # print(form.data)
         # print(form.errors)
@@ -25,6 +24,10 @@ def addRecipe(request, prev_id=-1):
 
         # Check if form is valid
         if form.is_valid():
+            # Handle privacy data (cast string to bool)
+            if 'public' in form.cleaned_data:
+                form.cleaned_data['public'] == (form.cleaned_data['public'] == 'make-public')
+
             # The hidden field is not present in cleaned_data, so we pull it from data
             provided_id = form.data.get('id', -1)
 
