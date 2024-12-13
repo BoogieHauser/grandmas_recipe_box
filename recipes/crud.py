@@ -1,3 +1,7 @@
+from django.http import Http404
+from django.core.exceptions import PermissionDenied
+from django.db.models import Q
+
 from .models import Recipe
 
 def crud_add_recipe(recipe_dict):
@@ -20,17 +24,34 @@ def crud_edit_recipe(prev_id, recipe_dict):
         recipe.tags.set(tags)
     return recipe.id
 
-def crud_get_recipes(id = -1, tags = ()):
+def crud_get_recipes(id = -1, tags = (), query = "", user = None):
     # If provided a single ID, return it
     if id != -1:
-        return Recipe.objects.filter(id=id)[0]
+        # Should throw a 404 if the recipe does not exist
+        matches = Recipe.objects.filter(id=id)
+
+        if len(matches) == 0:
+            raise Http404("Recipe not found")
+        else:
+            matched_recipe = matches[0]
+
+        # Should throw a 500 if the user does not have permission to see the recipe
+        # (is recipe owner or the recipe is public)
+        if matched_recipe.user != user and not matched_recipe.public:
+            raise PermissionDenied
+
+        return matched_recipe
 
     # If provided a list of tags
     if tags:
-        return Recipe.objects.filter(tags__name__in = tags)
+        return Recipe.objects.filter(tags__name__in = tags).filter(Q(user = user) | Q(public = True))
+
+    # If provided a query
+    if query:
+        return Recipe.objects.filter(title__icontains = query).filter(Q(user = user) | Q(public = True))
 
     # Otherwise, return all
-    return Recipe.objects.all()
+    return Recipe.objects.filter(Q(user = user) | Q(public = True))
 
 def crud_delete_recipe(id):
     Recipe.objects.filter(pk=id).delete()

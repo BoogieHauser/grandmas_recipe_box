@@ -230,8 +230,95 @@ pour cereal in""")
         self.assertEqual(saved_recipe.servings, 2)
         self.assertEqual(saved_recipe.get_tag_list(), ["Tag 1", "Tag 2"])
 
-    # def test_get_filtered_recipes(self): # TODO
-    #     pass
+    def test_get_filtered_recipes_tags(self):
+        recipes = [
+            {
+                "title" : "my recipe",
+                "ingredients" : "1,,food",
+                "instructions" : "cook",
+                "prepMinutes" : 60,
+                "cookMinutes" : 30,
+                "servings" : 2,
+                "tags" : ['Tag 1', 'Tag 2']
+            },
+            {
+                "title" : "my second recipe",
+                "ingredients" : "2,,food",
+                "instructions" : "chill",
+                "prepMinutes" : 45,
+                "cookMinutes" : 0,
+                "servings" : 2,
+                "tags" : ['Tag 2', 'Tag 3']
+
+            },
+            {
+                "title" : "another one",
+                "ingredients" : "3,,food",
+                "instructions" : "chill",
+                "prepMinutes" : 45,
+                "cookMinutes" : 0,
+                "servings" : 2,
+                "tags" : ['Tag 3', 'Tag 4']
+            }
+        ]
+        ids = [crud_add_recipe(recipe) for recipe in recipes]
+
+        # Contain Tag 1
+        self.assertEqual([ids[0]], [recipe.id for recipe in crud_get_recipes(tags = ["Tag 1"])])
+
+        # Contain Tag 2
+        self.assertEqual([ids[0], ids[1]], [recipe.id for recipe in crud_get_recipes(tags=["Tag 2"])])
+
+        # Contain Tag 3
+        self.assertEqual([ids[1], ids[2]], [recipe.id for recipe in crud_get_recipes(tags=["Tag 3"])])
+
+        # Contain Tag 4
+        self.assertEqual([ids[2]], [recipe.id for recipe in crud_get_recipes(tags=["Tag 4"])])
+
+    def test_get_filtered_recipes_query(self):
+        recipes = [
+            {
+                "title" : "my recipe",
+                "ingredients" : "1,,food",
+                "instructions" : "cook",
+                "prepMinutes" : 60,
+                "cookMinutes" : 30,
+                "servings" : 2,
+                "tags" : ['Tag 1', 'Tag 2']
+            },
+            {
+                "title" : "my second recipe",
+                "ingredients" : "2,,food",
+                "instructions" : "chill",
+                "prepMinutes" : 45,
+                "cookMinutes" : 0,
+                "servings" : 2,
+                "tags" : ['Tag 2', 'Tag 3']
+
+            },
+            {
+                "title" : "another one",
+                "ingredients" : "3,,food",
+                "instructions" : "chill",
+                "prepMinutes" : 45,
+                "cookMinutes" : 0,
+                "servings" : 2,
+                "tags" : ['Tag 3', 'Tag 4']
+            }
+        ]
+        ids = [crud_add_recipe(recipe) for recipe in recipes]
+
+        # Contains "recipe"
+        self.assertEqual([ids[0], ids[1]], [recipe.id for recipe in crud_get_recipes(query="recipe")])
+
+        # Contains "RECIPE"
+        self.assertEqual([ids[0], ids[1]], [recipe.id for recipe in crud_get_recipes(query="RECIPE")])
+
+        # Contains the letter "n"
+        self.assertEqual([ids[1], ids[2]], [recipe.id for recipe in crud_get_recipes(query="n")])
+
+        # Contains the  word "Another"
+        self.assertEqual([ids[2]], [recipe.id for recipe in crud_get_recipes(query="Another")])
 
     def test_delete_recipe(self):
         recipe = {
@@ -278,12 +365,6 @@ pour cereal in""")
         response = self.client.get(reverse("browseRecipe2"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'browseRecipes.html')
-
-    # TODO - Refactored how filtering works
-    # def test_browseFilteredRecipes_view(self):
-    #     response = self.client.get(reverse("filterRecipe", kwargs={"filter": "Vegetarian"}))
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertTemplateUsed(response, 'browseRecipes.html')
 
     def test_missing_image_info(self):
         recipe = {

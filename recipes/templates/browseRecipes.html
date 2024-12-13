@@ -6,34 +6,16 @@
 
 {% block body %}
 
-    <!--
     <div class="browseMainDiv">
-        <div class="browseDiv">
-            <h1 class="browseHeader">All My Recipes</h1>
-            <div style="justify-content:left; width:100%;">
-                <ul>
-                {% for recipe in recipes %}
-                    <li class="listItem">
-                        <a href="/viewRecipe/{{ recipe.id }}">{{ recipe.title }}</a>
-                        {% for mt in recipe.get_tag_list %}
-                            <a href="/browseRecipes/{{ mt }}" class="badge badge-success">{{mt}}</a>
-                        {% endfor %}
-                    </li>
-                {% empty %}
-                    <li class="listItem">No recipes found :( </li>
-                {% endfor %}
-                </ul>
-            </div>
-            <div style="margin-top:10px;">
-                <button onclick="location.href='{% url 'addRecipe' %}'" class="button">
-                  Please add a new recipe!
-              </button>
-            </div>
-        </div>
-    </div>
-    -->
-
-    <div class="browseMainDiv">
+        <form method="get" action="{% url 'browseRecipe' %}">
+            <input class="searchBar"
+                type="text"
+                name="query"
+                value="{{ query|default:'' }}"
+                placeholder="Search recipes..."
+            />
+            <button class="searchButton" type="submit">Search</button>
+        </form>
       <h1 class="browseHeader">All My Recipes</h1>
       <div class="gridContainer">
 

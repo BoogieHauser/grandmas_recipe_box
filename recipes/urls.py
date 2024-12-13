@@ -28,6 +28,12 @@ urlpatterns = [
     path("deleteRecipe/<int:id>", views.deleteRecipe, name="deleteRecipe"),
     path("", views.browseRecipe, name="browseRecipe"),
     path("browseRecipes", views.browseRecipe, name="browseRecipe2"),
+
+    path('register/', views.register, name='register'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('accounts/login/', views.login_view, name='login2'),
+
     #path("browseRecipes/<filter>", views.browseRecipe, name="filterRecipe"),
 ]
 

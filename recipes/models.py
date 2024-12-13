@@ -2,6 +2,11 @@ from django.db import models
 from taggit.managers import TaggableManager
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFit
+from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
+
+# class User(AbstractUser):
+#     pass
 
 class Recipe(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
@@ -18,6 +23,8 @@ class Recipe(models.Model):
         format = 'JPEG',
         options = {'quality':80}
     )
+    public = models.BooleanField(default=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='recipes')
 
     def get_ingredients_list(self):
         return self.ingredients.split("\n")
@@ -62,6 +69,3 @@ class Recipe(models.Model):
 
     def get_formatted_tags(self):
         return ','.join(['"{tag}"'.format(tag = tag) for tag in self.get_tag_list()])
-
-
-
