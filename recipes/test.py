@@ -392,6 +392,7 @@ pour cereal in""")
         response = self.client.get(reverse("register"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'register.html')
+    # test views for register, login, logout, accounts/login
 
     def test_missing_image_info(self):
         recipe = {
