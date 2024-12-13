@@ -18,27 +18,24 @@ def addRecipe(request, prev_id=-1):
     if request.method == "POST":
 
         # print(form)
-        print(form.data)
+        # print(form.data)
         # print(form.errors)
         # print(form.is_valid())
-        print(form.cleaned_data)
         # print(request.FILES.get("image"))
 
         # Check if form is valid
         if form.is_valid():
-
             # The hidden field is not present in cleaned_data, so we pull it from data
             provided_id = form.data.get('id', -1)
 
             # This is a new recipe
             if int(provided_id) == -1:
-                id = crud_add_recipe(form.cleaned_data)
+                id = crud_add_recipe(form.cleaned_data, user = request.user)
 
             # Editing an existing recipe
             else:
                 recipe_dict = process_image_dict(form.data, form.cleaned_data)
-                print(recipe_dict)
-                id = crud_edit_recipe(provided_id, recipe_dict)
+                id = crud_edit_recipe(provided_id, recipe_dict, user = request.user)
 
             return HttpResponseRedirect(f"/viewRecipe/{id}")
 
@@ -53,7 +50,7 @@ def addRecipe(request, prev_id=-1):
         # If id is not negative one, it was specified in the URL.  Use the ID specified in the URL to pre-populate
         # the form (simulating an edit with as much information as possible pre-provided)
         if prev_id != -1:
-            prevRecipe = crud_get_recipes(id = prev_id)
+            prevRecipe = crud_get_recipes(id = prev_id, user = request.user)
             taglist = prevRecipe.get_formatted_tags()
 
         # If the id is negative one, it was not specified in the URL.  Here we pre-populate the form only with

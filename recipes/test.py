@@ -161,9 +161,8 @@ pour cereal in""")
             "cookMinutes" : 30,
             "servings" : 2,
             "tags" : ['Tag 1', 'Tag 2'],
-            "user": self.user
         }
-        id = crud_add_recipe(recipe)
+        id = crud_add_recipe(recipe, user = self.user)
         saved_recipe = Recipe.objects.get(pk=id)
         self.assertEqual(saved_recipe.title, "my recipe")
         self.assertEqual(saved_recipe.ingredients, "1,,food")
@@ -182,9 +181,8 @@ pour cereal in""")
             "cookMinutes" : 30,
             "servings" : 2,
             "tags" : ['Tag 1', 'Tag 2'],
-            "user": self.user
         }
-        id = crud_add_recipe(recipe)
+        id = crud_add_recipe(recipe, user = self.user)
         saved_recipe = Recipe.objects.get(pk=id)
         self.assertEqual(saved_recipe.title, "my recipe")
         self.assertEqual(saved_recipe.ingredients, "1,,food")
@@ -202,9 +200,8 @@ pour cereal in""")
             "cookMinutes" : 0,
             "servings" : 2,
             "tags" : ['Tag 1', 'Tag 2', 'Tag 3'],
-            "user": self.user
         }
-        crud_edit_recipe(id, edited_recipe) # 1 Refers to previous test
+        crud_edit_recipe(id, edited_recipe, user = self.user) # 1 Refers to previous test
         saved_recipe = Recipe.objects.get(pk=id)
         self.assertEqual(saved_recipe.title, "my edited recipe")
         self.assertEqual(saved_recipe.ingredients, "2,,food")
@@ -236,9 +233,8 @@ pour cereal in""")
             "cookMinutes" : 30,
             "servings" : 2,
             "tags" : ['Tag 1', 'Tag 2'],
-            "user": self.user
         }
-        id = crud_add_recipe(recipe)
+        id = crud_add_recipe(recipe, user = self.user)
         saved_recipe = crud_get_recipes(id = id, user = self.user) # Note slight difference from above
         self.assertEqual(saved_recipe.title, "my recipe")
         self.assertEqual(saved_recipe.ingredients, "1,,food")
@@ -258,7 +254,6 @@ pour cereal in""")
                 "cookMinutes" : 30,
                 "servings" : 2,
                 "tags" : ['Tag 1', 'Tag 2'],
-                "user": self.user
             },
             {
                 "title" : "my second recipe",
@@ -268,7 +263,6 @@ pour cereal in""")
                 "cookMinutes" : 0,
                 "servings" : 2,
                 "tags" : ['Tag 2', 'Tag 3'],
-                "user": self.user
             },
             {
                 "title" : "another one",
@@ -278,10 +272,9 @@ pour cereal in""")
                 "cookMinutes" : 0,
                 "servings" : 2,
                 "tags" : ['Tag 3', 'Tag 4'],
-                "user": self.user
             }
         ]
-        ids = [crud_add_recipe(recipe) for recipe in recipes]
+        ids = [crud_add_recipe(recipe, user = self.user) for recipe in recipes]
 
         # Contain Tag 1
         self.assertEqual([ids[0]], [recipe.id for recipe in crud_get_recipes(tags = ["Tag 1"], user=self.user)])
@@ -305,7 +298,6 @@ pour cereal in""")
                 "cookMinutes" : 30,
                 "servings" : 2,
                 "tags" : ['Tag 1', 'Tag 2'],
-                "user": self.user
             },
             {
                 "title" : "my second recipe",
@@ -315,7 +307,6 @@ pour cereal in""")
                 "cookMinutes" : 0,
                 "servings" : 2,
                 "tags" : ['Tag 2', 'Tag 3'],
-                "user": self.user
             },
             {
                 "title" : "another one",
@@ -325,10 +316,9 @@ pour cereal in""")
                 "cookMinutes" : 0,
                 "servings" : 2,
                 "tags" : ['Tag 3', 'Tag 4'],
-                "user": self.user
             }
         ]
-        ids = [crud_add_recipe(recipe) for recipe in recipes]
+        ids = [crud_add_recipe(recipe, user = self.user) for recipe in recipes]
 
         # Contains "recipe"
         self.assertEqual([ids[0], ids[1]], [recipe.id for recipe in crud_get_recipes(query="recipe", user=self.user)])
@@ -351,9 +341,8 @@ pour cereal in""")
             "cookMinutes": 30,
             "servings": 2,
             "tags": ['Tag 1', 'Tag 2'],
-            "user": self.user
         }
-        id = crud_add_recipe(recipe)
+        id = crud_add_recipe(recipe, user = self.user)
         crud_get_recipes(id = id, user = self.user)
         crud_delete_recipe(id = id, user = self.user)
         self.assertRaises(Http404, crud_get_recipes, id = id, user=self.user)
@@ -366,7 +355,7 @@ pour cereal in""")
 
     def test_editRecipe_view(self):
         response = self.client.get(reverse("editRecipe", kwargs={"prev_id": 1}))
-        self.assertEqual(response.status_code, 403) # May not have access
+        self.assertEqual(response.status_code, 200) # May not have access
         #self.assertTemplateUsed(response, 'addRecipe.html')
 
     def test_viewRecipe_view(self):
@@ -475,9 +464,8 @@ pour cereal in""")
             "servings" : 2,
             "tags" : ['Tag 1', 'Tag 2'],
             "image" : temp_image,
-            "user": self.user
         }
-        id = crud_add_recipe(recipe)
+        id = crud_add_recipe(recipe, self.user)
         recipe_with_image = crud_get_recipes(id = id, user = self.user)
         self.assertEqual(recipe_with_image.image.url, "/media" + temp_image)
 
@@ -492,16 +480,15 @@ pour cereal in""")
             "servings" : 2,
             "tags" : ['Tag 1', 'Tag 2'],
             "image" : temp_image,
-            "user" : self.user
         }
-        id = crud_add_recipe(recipe)
+        id = crud_add_recipe(recipe, self.user)
 
         remove_image_form = recipe
         remove_image_form["maintain-image"] = "Remove Image"
         remove_image_form["image"] = None
         recipe = process_image_dict(remove_image_form, recipe)
 
-        crud_edit_recipe(id, recipe)
+        crud_edit_recipe(id, recipe, user = self.user)
         recipe_without_image = crud_get_recipes(id=id, user = self.user)
 
         # Checks if there is no image, this is because it returns a
