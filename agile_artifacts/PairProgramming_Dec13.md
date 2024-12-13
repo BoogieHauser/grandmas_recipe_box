@@ -4,7 +4,9 @@ Impediments:
 * Review of rubric
 
 Done:
-* 
+* Added tests for login, logout, and register routes
+* Added ability for users to create public recipes
+* Added ability for users to change recipes from public to private and vice-versa
 
 TODO:
 * Introduce additional tests
