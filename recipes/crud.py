@@ -38,9 +38,10 @@ def crud_edit_recipe(prev_id, recipe_dict, user):
 
     for key, val in recipe_dict.items():
         setattr(matched_recipe, key, val)
-    matched_recipe.save()
     if include_tags:
         matched_recipe.tags.set(tags)
+
+    matched_recipe.save()
     return matched_recipe.id
 
 def crud_get_recipes(id = -1, tags = (), query = "", user = None):

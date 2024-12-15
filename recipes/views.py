@@ -26,7 +26,10 @@ def addRecipe(request, prev_id=-1):
         if form.is_valid():
             # Handle privacy data (cast string to bool)
             if 'public' in form.cleaned_data:
-                form.cleaned_data['public'] == (form.cleaned_data['public'] == 'make-public')
+                form.cleaned_data['public'] = (form.data['public'] == 'make-public')
+
+            print(form.cleaned_data)
+            print()
 
             # The hidden field is not present in cleaned_data, so we pull it from data
             provided_id = form.data.get('id', -1)

@@ -21,9 +21,10 @@
 
         {% for recipe in recipes %}
           <div class="gridItem" onclick="location.href='/viewRecipe/{{ recipe.id }}';">
-            <h3>{{ recipe.title }}</h3>
+              <h3>{{ recipe.title }}</h3>
+              <hr>
               {% if recipe.image %}
-                <div style="display:block; margin-left:auto; margin-right:auto;">
+                <div class="recipeImage">
                     <img src="{{ recipe.thumbnail.url }}" alt="{{ recipe.title }}">
                 </div>
               {% endif %}
