@@ -374,7 +374,11 @@ Answers to all of these questions along with task board/ burndown updates can be
 **[BDD Test Directory](features)**
 
 **Passing Unit Tests Screen Cap**
-**![Unit Test Pass Screenshot]()**
+**![Unit Test Pass Screenshot](agile_artifacts/images/UnitTests_Dec15.png)**
+
+**Passing BDD Tests Screen Cap**
+**![BDD Test Pass Screenshot](agile_artifacts/images/BDDTests_Dec15.png)**
+
 
 
 ### WORKING SOFTWARE 
@@ -389,14 +393,19 @@ CI/CD is exactly the same as before with the only addition being that BDD tests 
 
 **[BDD Testing Addition to CI/CD Pipeline](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1734105389239519?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
 
+**[BONUS: BDD Testing Addition to Github Actions](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1734298993693239?thread_ts=1732987644.710599&cid=C07TUEH8HFD)**
+
 
 
 ### SPRINT REVIEW AND SPRINT RETROSPECTIVE
 **[Sprint Retrospective:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1734293109862349?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Screen capture of team fun completing sprint retrospective.
 
-**[Sprint Rectrospective Notes:](agile_artifacts/SprintRetrospective_Dec15.md)**
+**[Sprint Retrospective Notes:](agile_artifacts/SprintRetrospective_Dec15.md)**
 Notes from our sprint retrospective on 12/15/2024.
+
+**[Sprint Review Slides:](https://docs.google.com/presentation/d/1mqEP3xfxGqa-kvcgFW5GnV07rzuzf7s6ZxYgMDKz6bc/edit?usp=sharing)**
+Slides used during our sprint review on 12/16/2024.
 
 
 ---
