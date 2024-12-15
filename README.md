@@ -392,7 +392,7 @@ CI/CD is exactly the same as before with the only addition being that BDD tests 
 
 
 ### SPRINT REVIEW AND SPRINT RETROSPECTIVE
-**[Sprint Retrospective:]()**
+**[Sprint Retrospective:](https://agilesoftwarecourse.slack.com/archives/C07TUEH8HFD/p1734293109862349?thread_ts=1730938222.647509&cid=C07TUEH8HFD)**
 Screen capture of team fun completing sprint retrospective.
 
 **[Sprint Rectrospective Notes:](agile_artifacts/SprintRetrospective_Dec15.md)**
